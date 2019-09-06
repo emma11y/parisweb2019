@@ -81,7 +81,7 @@
 		request: function (elem) {
 			var request = fn.requestFullscreen;
 
-			elem = elem || document.documentElement;
+            var docElm = elem || document.documentElement;
 
 			// Work around Safari 5.1 bug: reports support for
 			// keyboard in fullscreen even though it doesn't.
@@ -90,7 +90,22 @@
 			if (/5\.1[\.\d]* Safari/.test(navigator.userAgent)) {
 				elem[request]();
 			} else {
-				elem[request](keyboardAllowed && Element.ALLOW_KEYBOARD_INPUT);
+				//elem[request](keyboardAllowed && Element.ALLOW_KEYBOARD_INPUT);
+                               
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+                else if (docElm.msRequestFullscreen) {
+                    docElm.msRequestFullscreen();
+                } else {
+                    elem[request](keyboardAllowed && Element.ALLOW_KEYBOARD_INPUT);
+                }
 			}
 		},
 		exit: function () {
