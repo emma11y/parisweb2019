@@ -1,1 +1,2476 @@
-var AccessReader=function(){"use strict";var e,t,l,a={Screen:{id:"screen"},Banner:{id:"banner"},Nav:{id:"nav-wrapper",classSettingVisible:"navbar-visible",classSettingInvisible:"navbar-invisible"},NavBar:{id:"navbar"},PrevNext:{id:"prev-next"},WrapperNav:{id:"wrappernav"},Wrapper:{id:"wrapper",classSettingLeft:"Cagauche"},Flap:{id:"volet"},Slide:{classSetting:"slide"},Summary:{id:"sommaire",classSettingFixed:"fixed tool-block tool-block-summary",Ctitle:"Ct"},SummaryLinkActive:{classSetting:"summary-link-active"},Setting:{id:"setting",Ctitle:"Ctitle"},OwnerInfo:{id:"owner-info",classSetting:"owner-info",Ctitle:"Ctitle-Owner-Info"},HelpInfo:{id:"help-info",classSetting:"help-info",Ctitle:"Ctitle-help-Info"},FormConfig:{id:"FormConfig"},ConfigButton:{id:"configbutton",classSetting:"btn-group-settings"},LinearIndexTag:{classSetting:"index"},LiveSlideTitle:{id:"Dcourante"},Breadcrumb:{id:"breadcrumb",classSetting:"breadcrumb"},SkipLink:{id:"skip-link",classSetting:"skip-link"},ObjectFullScreen:{classSetting:"full-screen-object"},Eno:{useIt:!0,val:"Eno",flap:!1,slide:!1,group:"Geffects"},Stexte:{id:"Stexte",file:"bip_texte_masque"},Sdiapo:{id:"Sdiapo",file:"bip_diapo_on"},Sdiapo1:{id:"Sdiapo1",file:"bip_diapo1_on"},Sdiapoend:{id:"Sdiapoend",file:"bip_diapo_end"},Caudio:{id:"Caudio"},HiddenContent:{classSetting:"Cmasque"},VocalizeNdiapo:{useIt:!0,id:"VocalizeNdiapo",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:0,group:"Gaccess"},SoundTxt:{useIt:!1,id:"SoundTxt",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:0,group:"Gaccess"},SoundSlide:{useIt:!0,id:"SoundSlide",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:0,group:"Gaccess"},SoundSlide1:{useIt:!0,id:"SoundSlide1",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:0,group:"Gaccess"},SoundSlideEnd:{useIt:!0,id:"SoundSlideEnd",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:0,group:"Gaccess"},VocalizeTitle:{useIt:!0,id:"VocalizeTitle",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:0,group:"Gaccess"},UpWindowTitle:{useIt:!0,id:"UpWindowTitle",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-sound",IconClass:"icon icon-setting-sound",val:1,group:"Gaccess"},GotoBnext:{useIt:!0,id:"GotoBnext",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-next",IconClass:"icon icon-setting-next",val:0,group:"Gaccess"},Noclick:{useIt:!0,id:"Noclick",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-mouse",IconClass:"icon icon-setting-mouse",val:1,group:"Gaccess"},FontDyslexia:{useIt:!0,id:"FontDyslexia",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-font-dyslexia",IconClass:"icon icon-setting-font-dyslexia",val:0,group:"Gdys",classSettingEffect:"dys-f"},LineSpaceDyslexia:{useIt:!0,id:"LineSpaceDyslexia",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-line-space-dyslexia",IconClass:"icon icon-setting-line-space-dyslexia",val:0,group:"Gdys",classSettingEffect:"dys-l"},NoJustify:{useIt:!1,id:"NoJustify",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-no-justify",IconClass:"icon icon-setting-no-justify",val:0,group:"Gdys",classSettingEffect:"dys-j"},Contrast:{id:"contrastSelect"},ContrastDefault:{val:"default-c",always:!0,group:"Gcontrast"},ContrastInvert:{val:"inv-c",always:!0,group:"Gcontrast"},ContrastEnforced:{val:"high-c",always:!1,group:"Gcontrast"},SumModOn:{useIt:!0,id:"SumModOn",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-summary",IconClass:"icon icon-setting-summary",val:1,group:"Gslide"},ModePlan:{useIt:!0,id:"ModePlan",classSetting:"input-setting",classHelpSetting:"help",classLabelSetting:"label-setting setting-plan",IconClass:"icon icon-setting-plan",val:0,group:"Gslide"},Bsubmit:{id:"setconfig",classSetting:"btn-setting"},Bdefault:{id:"resetconfig",classSetting:"btn-setting"},Bclose:{idSummary:"close",idConfig:"Close2",idOwnerInfo:"Close3",idHelpInfo:"Close4",classSetting:"btn-close",iconClass:"icon icon-close",fallbackClass:"text",fallBackSrcImg:"img/close.png"},Bprev:{id:"prev",classSetting:"tool-bar-elt btn btn-prev",iconClass:"icon icon-prev",fallbackClass:"text",fallBackSrcImg:"img/prev.png"},Bnext:{id:"next",classSetting:"tool-bar-elt btn btn-next",iconClass:"icon icon-next",fallbackClass:"text",fallBackSrcImg:"img/next.png"},Select:{id:"tocP",classSetting:"select-goto"},Bselect:{id:"tocp",classSetting:"btn btn-goto",iconClass:"icon icon-goto",fallbackClass:"text medium-only",fallBackSrcImg:"img/goto.png",fallBackSmSrcImg:"img/goto-sm.png",fallbackSmClass:"text small-only"},Btoc:{id:"toc",classSetting:"tool-bar-elt btn btn-block-summary",iconClass:"icon icon-summary",fallbackClass:"text medium-only",fallBackSrcImg:"img/summary.png",fallBackSmSrcImg:"img/summary-sm.png",fallbackSmClass:"text small-only"},Bconfig:{id:"set",classSetting:"tool-bar-elt btn btn-block-settings",iconClass:"icon icon-settings",fallbackClass:"text medium-only",fallBackSrcImg:"img/settings.png",fallBackSmSrcImg:"img/settings-sm.png",fallbackSmClass:"text small-only"},Bprint:{id:"print",classSetting:"tool-bar-elt btn btn-block-print",iconClass:"icon icon-print",fallbackClass:"text",fallBackSrcImg:"img/print.png"},BfullScreen:{id:"full-screen-button",classSetting:"tool-bar-elt btn btn-block-fullscreen",iconClass:"icon icon-fullscreen",iconClassExit:"icon icon-fullscreen-exit",fallbackClass:"text medium-only",fallBackSrcImg:"img/fullscreen.png",fallBackSrcImgExit:"img/fullscreen-exit.png",fallBackSmSrcImg:"img/fullscreen-sm.png",fallbackSmClass:"text small-only"},BownerInfo:{id:"owner-info-button",classSetting:"tool-bar-elt btn btn-block-owner",iconClass:"icon icon-owner-info",fallbackClass:"text medium-only",fallBackSrcImg:"img/owner-info.png",fallBackSmSrcImg:"img/owner-info-sm.png",fallbackSmClass:"text small-only"},BhelpInfo:{id:"help-info-button",classSetting:"tool-bar-elt btn btn-block-help",iconClass:"icon icon-help-info",fallbackClass:"text medium-only",fallBackSrcImg:"img/help-info.png",fallBackSmSrcImg:"img/help-info-sm.png",fallbackSmClass:"text small-only"},Bdownload:{id:"pdf-download-button",idFile:"download-file",classSetting:"tool-bar-elt btn btn-block-pdf",iconClass:"icon icon-pdf-download",fallbackClass:"text",fallBackSrcImg:"img/pdf-download.png"},SelectWrapper:{id:"Fgo",classSetting:"tool-bar-elt"},TocSelect:{id:"tocP"},SlideCounter:{id:"cpt",idCurrent:"current",idTotal:"total",classSetting:"tool-bar-elt slide-counter",currentClass:"tool-bar-elt slide-counter-current",isHiddenClass:"sr",totalClass:"tool-bar-elt slide-counter-total"},IconFallBack:{classSetting:"icon-fallback-text"},Ctitle:{classSetting:"tool-block-title"}},i=0,n=[],s=[],d=0,c=0,o=new Array("button","a","select","input","audio","video","textarea","label"),r=null,u=document.title,p=["webkit","moz","MS","o",""];function m(){for(var e=W(a.Screen.id).getAttribute("data-effect"),t=0,l=n.length;t<l;t++)n[t].classList.remove("active"),n[t].classList.remove("inactive"),n[t].className=n[t].className+" inactive",n[t].classList.remove(a[e].classSetting),n[t].setAttribute("tabindex","-1");W(a.Flap.id).classList.remove(a[e].classSetting)}function g(){if(0===c){if((i+=1)>=n.length&&(i-=1),m(),n[i]){var e=i+1;n[i].classList.remove("active"),n[i].classList.remove("inactive"),n[i].className=n[i].className+" active",n[i].setAttribute("tabindex","0"),I(e)}w(),0===i||i===n.length-1?W(a.Banner.id).classList.add("is-hidden"):W(a.Banner.id).classList.contains("is-hidden")&&W(a.Banner.id).classList.remove("is-hidden"),k(),W(a.SlideCounter.idCurrent).firstChild.nodeValue=i+1,1===a.VocalizeTitle.val&&O(),S()}else s[d]&&(s[d].style.visibility="visible"),(d+=1)>=s.length&&(c=0,d=0,s.length=0);i===n.length-1?(W(a.Nav.id).classList.remove(a.Nav.classSettingInvisible),W(a.Nav.id).classList.add(a.Nav.classSettingVisible),W(a.Bnext.id).style.display="none"):(W(a.Nav.id).classList.remove(a.Nav.classSettingVisible),W(a.Nav.id).classList.add(a.Nav.classSettingInvisible),W(a.Bnext.id).style.display="block",W(a.Bprev.id).style.display="block")}function b(){if(0===c){if((i-=1)<0&&(i=0),m(),n[i]){var e=i+1;n[i].classList.remove("active"),n[i].classList.remove("inactive"),n[i].className=n[i].className+" active",n[i].setAttribute("tabindex","0"),I(e)}w(),0===i||i===n.length-1?W(a.Banner.id).classList.add("is-hidden"):W(a.Banner.id).classList.contains("is-hidden")&&W(a.Banner.id).classList.remove("is-hidden"),k(),W(a.SlideCounter.idCurrent).firstChild.nodeValue=i+1,1==a.VocalizeTitle.val&&O(),S(1)}else s[d].style.visibility="hidden",(d+=1)>=s.length&&(c=0,d=0,s.length=0);0===i?(W(a.Nav.id).classList.remove(a.Nav.classSettingInvisible),W(a.Nav.id).classList.add(a.Nav.classSettingVisible),W(a.Bprev.id).style.display="none"):(W(a.Nav.id).classList.remove(a.Nav.classSettingVisible),W(a.Nav.id).classList.add(a.Nav.classSettingInvisible),W(a.Bprev.id).style.display="block",W(a.Bnext.id).style.display="block")}function f(t){if(0===c||1===e){if(i>=n.length&&(i=0),m(),n[i]){var l=i+1;n[i].classList.remove("active"),n[i].classList.remove("inactive"),n[i].className=n[i].className+" active",n[i].setAttribute("tabindex","0"),I(l),t&&n[i].focus()}w(),0===i||i===n.length-1?W(a.Banner.id).classList.add("is-hidden"):W(a.Banner.id).classList.contains("is-hidden")&&W(a.Banner.id).classList.remove("is-hidden"),k(),W(a.SlideCounter.idCurrent).firstChild.nodeValue=i+1,1===a.VocalizeTitle.val&&O(),S(),e=null}else s[d].style.visibility="visible",(d+=1)>=s.length&&(c=0,d=0,s.length=0);0===i||i===n.length-1?(W(a.Nav.id).classList.remove(a.Nav.classSettingInvisible),W(a.Nav.id).classList.add(a.Nav.classSettingVisible),0===i&&(W(a.Bprev.id).style.display="none"),i===n.length-1&&(W(a.Bnext.id).style.display="none")):(W(a.Nav.id).classList.remove(a.Nav.classSettingVisible),W(a.Nav.id).classList.add(a.Nav.classSettingInvisible),W(a.Bprev.id).style.display="block",W(a.Bnext.id).style.display="block")}function v(){parseInt(W(a.TocSelect.id).value)>-1?(i=parseInt(W(a.TocSelect.id).value),f(!0),e=1):W(a.TocSelect.id).focus()}function S(e){for(var t=n[i].querySelectorAll("*"),l=0,d=0,o=t.length;d<o;d++)t[d].classList.contains(a.HiddenContent.classSetting)&&(s[l]=t[d],l++);if(s.length>0){c=1;for(d=0,o=s.length;d<o;d++)s[d].style.visibility=1===e?"visible":"hidden";1===e&&s.reverse()}}function h(){var e=window.getComputedStyle(W(a.Summary.id));1===a.SumModOn.val?(W(a.Summary.id).setAttribute("role","dialog"),W(a.Summary.id).setAttribute("aria-labelledby",a.Summary.Ctitle)):0===a.ModePlan.val?(W(a.Wrapper.id).style.width="70%",W(a.Wrapper.id).style.maxWidth="1140px",W(a.Wrapper.id).style.fontSize="80%",W(a.Wrapper.id).style.left="10px"):W(a.Wrapper.id).setAttribute("class",a.Wrapper.classSettingLeft),"block"===e.getPropertyValue("display")?(W(a.Summary.id).style.display="none",W(a.Btoc.id).setAttribute("title",lang.Btoc.titleOpen),W(a.Btoc.id).querySelector("img")&&W(a.Btoc.id).querySelector("img").setAttribute("alt",lang.Btoc.altOpen),r=null):"none"===e.getPropertyValue("display")&&(W(a.Summary.id).style.display="block",W(a.Btoc.id).setAttribute("title",lang.Btoc.titleClose),W(a.Btoc.id).querySelector("img")&&W(a.Btoc.id).querySelector("img").setAttribute("alt",lang.Btoc.altClose),W(a.Bclose.idSummary).focus(),r=W(a.Summary.id))}function C(){"block"===W(a.Setting.id).style.display?(W(a.Setting.id).style.display="none",W(a.Bconfig.id).setAttribute("title",lang.Bconfig.titleOpen),W(a.Bconfig.id).querySelector("img")&&W(a.Bconfig.id).querySelector("img").setAttribute("alt",lang.Bconfig.altOpen),r=null,W(a.Bconfig.id).focus()):"none"===W(a.Setting.id).style.display&&(W(a.Setting.id).style.display="block",W(a.Bconfig.id).setAttribute("title",lang.Bconfig.titleClose),W(a.Bconfig.id).querySelector("img")&&W(a.Bconfig.id).querySelector("img").setAttribute("alt",lang.Bconfig.altClose),r=W(a.Setting.id),W(a.Bclose.idConfig).focus())}function B(){var e=window.getComputedStyle(W(a.OwnerInfo.id));"none"===e.getPropertyValue("display")?(W(a.OwnerInfo.id).style.display="block",W(a.BownerInfo.id).setAttribute("title",lang.BownerInfo.titleClose),W(a.BownerInfo.id).querySelector("img")&&W(a.BownerInfo.id).querySelector("img").setAttribute("alt",lang.BownerInfo.altClose),W(a.Bclose.idOwnerInfo).focus(),r=W(a.OwnerInfo.id)):"block"===e.getPropertyValue("display")&&(W(a.OwnerInfo.id).style.display="none",W(a.BownerInfo.id).setAttribute("title",lang.BownerInfo.titleOpen),W(a.BownerInfo.id).querySelector("img")&&W(a.BownerInfo.id).querySelector("img").setAttribute("alt",lang.BownerInfo.altOpen),r=null)}function y(){var e=window.getComputedStyle(W(a.HelpInfo.id));"none"===e.getPropertyValue("display")?(W(a.HelpInfo.id).style.display="block",W(a.BhelpInfo.id).setAttribute("title",lang.BhelpInfo.titleClose),W(a.BhelpInfo.id).querySelector("img")&&W(a.BhelpInfo.id).querySelector("img").setAttribute("alt",lang.BhelpInfo.altClose),W(a.Bclose.idHelpInfo).focus(),r=W(a.HelpInfo.id)):"block"===e.getPropertyValue("display")&&(W(a.HelpInfo.id).style.display="none",W(a.BhelpInfo.id).setAttribute("title",lang.BhelpInfo.titleOpen),W(a.BhelpInfo.id).querySelector("img")&&W(a.BhelpInfo.id).querySelector("img").setAttribute("alt",lang.BhelpInfo.altOpen),OpenDial=null)}function A(){switch(r.getAttribute("id")){case a.Summary.id:W(a.Wrapper.id).removeAttribute("style"),W(a.Summary.id).style.display="none",W(a.Btoc.id).focus(),W(a.Nav.id).classList.remove("navbar-invisible"),W(a.Nav.id).classList.add("navbar-visible"),W(a.Btoc.id).setAttribute("title",lang.Btoc.titleOpen),W(a.Btoc.id).querySelector("img")&&W(a.Btoc.id).querySelector("img").setAttribute("alt",lang.Btoc.altOpen),r=null;break;case a.Setting.id:W(a.Setting.id).style.display="none",W(a.Bconfig.id).focus(),W(a.Nav.id).classList.remove("navbar-invisible"),W(a.Nav.id).classList.add("navbar-visible"),W(a.Bconfig.id).setAttribute("title",lang.Btoc.titleOpen),W(a.Bconfig.id).querySelector("img")&&W(a.Bconfig.id).querySelector("img").setAttribute("alt",lang.Btoc.altOpen),r=null;break;case a.OwnerInfo.id:W(a.OwnerInfo.id).style.display="none",W(a.BownerInfo.id).focus(),W(a.Nav.id).classList.remove("navbar-invisible"),W(a.Nav.id).classList.add("navbar-visible"),W(a.BownerInfo.id).setAttribute("title",lang.BownerInfo.titleOpen),W(a.BownerInfo.id).querySelector("img")&&W(a.BownerInfo.id).querySelector("img").setAttribute("alt",lang.BownerInfo.altOpen),r=null;break;case a.HelpInfo.id:W(a.HelpInfo.id).style.display="none",W(a.BhelpInfo.id).focus(),W(a.Nav.id).classList.remove("navbar-invisible"),W(a.Nav.id).classList.add("navbar-visible"),W(a.BhelpInfo.id).setAttribute("title",lang.BhelpInfo.titleOpen),W(a.BhelpInfo.id).querySelector("img")&&W(a.BhelpInfo.id).querySelector("img").setAttribute("alt",lang.BhelpInfo.altOpen),r=null}1===a.ModePlan.val&&W(a.Wrapper.id).removeAttribute("class"),r=null}function E(){var e=parseInt(location.hash.substr(2));if(0===a.ModePlan.val)((i=e-1)<0||!i)&&(i=0),c=0,f(!0),r&&1===a.SumModOn.val&&(W(r.getAttribute("id")).style.display="none",r=null);else{var l=t+"#D"+e;window.location.href=l,N()}}function I(e){var l=t+"#D"+e;if(0===a.ModePlan.val){var s={currentUrl:l};history.pushState(s,"",l)}N(),function(){var e=(g=document.getElementById(a.Breadcrumb.id)).querySelector("ul");e&&g.removeChild(e);if(!(o=n[i].querySelector("h2"))&&i<n.length-1){var l=document.createElement("ul"),s=document.createElement("li"),d=document.createElement("a"),c=parseInt(n[i].getAttribute("data-breadcrumb"));if(c){var o=n[c].querySelector("h2"),r=o.innerText||o.textContent,u=document.createTextNode(r),p=c+1,m=t+"#D"+p;d.appendChild(u),d.setAttribute("href",m),s.appendChild(d),l.appendChild(s),g.appendChild(l);var g=document.getElementById(a.Breadcrumb.id).querySelector("ul ");g.classList.remove("no-breadcrumb")}}n.length;if(0===i||i===n.length-1){var g=document.getElementById(a.Breadcrumb.id).querySelector("ul ");g&&g.classList.add("no-breadcrumb")}}(),W(a.SkipLink.id).setAttribute("href",l),document.getElementsByTagName("body")[0].setAttribute("data-slide",e),function(){for(var e=document.querySelectorAll("section"),t=0,l=e.length;t<l;t++){var a=e[t].classList,i=(i=document.body.classList).toString();if(a.contains("active")){var n=(a=a.toString()).split(" ");if(a.search(/a42-bgcolor/)>0){var s=0;for(l=n.length;s<l;s++)if(n[s].indexOf("a42-bgcolor")>=0){var d=n[s].replace("a42-bgcolor-","");if(i.indexOf("a42-page-")>=0){var c=0;for(l=(g=i.split(" ")).length;c<l;c++)if(g[c].indexOf("a42-page-")>=0){var o=g[c].slice(0,-(g[c].length-9))+d;document.body.classList.replace(g[c],o)}}else document.body.classList.add("a42-page-"+d)}}else if(i.indexOf("a42-page-")>=0)for(c=0,l=(g=i.split(" ")).length;c<l;c++)g[c].indexOf("a42-page-")>=0&&document.body.classList.remove(g[c]);var r=a.search(/a42-border/),u=a.search(/a42-page-border/);if(r>0){for(s=0,l=n.length;s<l;s++)if(n[s].indexOf("a42-border")>=0){var p=n[s].replace("a42-border-","");if(i.indexOf("a42-pageborder")>=0){for(c=0,l=(g=i.split(" ")).length;c<l;c++)if(g[c].indexOf("a42-pageborder")>=0){var m=g[c].slice(0,-(g[c].length-15))+p;document.body.classList.replace(g[c],m)}}else document.body.classList.add("a42-pageborder-"+p)}}else if(u>0){for(s=0,l=n.length;s<l;s++)if(n[s].indexOf("a42-page-border")>=0)if(i.indexOf("a42-pageborder")>=0)for(c=0,l=(g=i.split(" ")).length;c<l;c++)g[c].indexOf("a42-pageborder")>=0&&document.body.classList.replace(g[c],"a42-pageborder-c1");else document.body.classList.add("a42-pageborder-c1")}else if(i.indexOf("a42-pageborder")>=0){var g;for(c=0,l=(g=i.split(" ")).length;c<l;c++)g[c].indexOf("a42-pageborder")>=0&&document.body.classList.remove(g[c])}}}}()}function N(){for(var e=W(a.Summary.id).querySelectorAll("a"),t=0,l=e.length;t<l;t++){e[t].classList.remove(a.SummaryLinkActive.classSetting),e[t].removeAttribute("title");var i=location.hash.substr(1),n=e[t].getAttribute("href").split("#"),s=e[t].innerText||e[t].textContent;i==n[1]&&(e[t].classList.add(a.SummaryLinkActive.classSetting),e[t].setAttribute("title",s+lang.SummaryLinkActiveTitle))}}function k(){var e=W(a.Screen.id).getAttribute("data-effect");a[e].flap?W(a.Flap.id).classList.add(a[e].classSetting):a[e].slide&&n[i].classList.add(a[e].classSetting),n[i].style.opacity="1"}function x(){window.print()}function L(){if(W(a.Bdownload.idFile).getAttribute("data-url"))var e=W(a.Bdownload.idFile).getAttribute("data-url");else e="download/"+W(a.Bdownload.idFile).getAttribute("data-filename")+"."+W(a.Bdownload.idFile).getAttribute("data-type");window.open(e)}function w(){1===a.SoundSlide.val&&0!=i&&W(a.Sdiapo.id).play(),1===a.SoundSlide1.val&&0===i&&W(a.Sdiapo1.id).play(),1===a.SoundSlideEnd.val&&i===n.length-1&&W(a.Sdiapoend.id).play(),1===a.UpWindowTitle.val&&q()}function T(e,t){var l=document.createElement("audio");l.setAttribute("id",t);var i=document.createElement("source");i.setAttribute("src","sound/"+e+".mp3"),i.setAttribute("type","audio/mp3");var n=document.createElement("source");n.setAttribute("src","sound/"+e+".ogg"),n.setAttribute("type","audio/ogg"),l.appendChild(i),l.appendChild(n),W(a.Caudio.id).appendChild(l)}function O(){var e=n[i].childNodes;if(W(a.LiveSlideTitle.id).innerHTML="","h2"===e[1].tagName)W(a.LiveSlideTitle.id).innerHTML=e[1].innerHTML;else{var t=document.createTextNode(n[i].getAttribute("aria-label"));W(a.LiveSlideTitle.id).appendChild(t)}}function q(){var e=n[i].querySelector("h1,h2,h3,h4,h5,h6");if(e)var t=e.innerText||e.textContent;else if(n[i].getAttribute("aria-label"))t=n[i].getAttribute("aria-label");if(t)document.title=t+" | "+u;else if(W("breadcrumb").querySelector("a")){t=W("breadcrumb").querySelector("a").innerHTML;document.title=t+" | "+u}}function H(e){for(var t in a)switch(a[t].group){case"Gcontrast":document.querySelector("body ").classList.remove(a[t].val)}document.querySelector("body ").classList.add(e)}function F(){for(var e=document.querySelectorAll("#setting form fieldset input, #setting form fieldset span select"),t=0,l=e.length;t<l;t++){var i=e[t].getAttribute("id");try{localStorage.removeItem(i)}catch(e){U(i)}"INPUT"===e[t].nodeName?1===a[i].val&&e[t].setAttribute("checked","checked"):"SELECT"===e[t].nodeName&&(e[t].value=a.Eno.val)}}function G(e,t,a){var i=W("AccessibleTooltip"),n=5,s=!0,d=4e3,c=!1,o=!0;if(t)!function(e,t){var a=W("AccessibleTooltip");a.firstChild&&(t&&e.setAttribute("title",a.firstChild.nodeValue),a.removeChild(a.firstChild),a.style.display="none");clearTimeout(l)}(e,a);else if(e.getAttribute("title")){var r=e.getAttribute("title"),u=document.createTextNode(r);if(""!=r){a&&e.removeAttribute("title");var p=i.offsetLeft+i.offsetWidth,m=0,g=document.body.clientWidth;document.body.clientHeight;p>g&&(m=p-g);var b=n+e.offsetHeight,f=V(e,"y")+b;s&&(f=V(e,"y")-b-5),i.style.top=f+"px",i.style.left=V(e,"x")+25*e.offsetWidth/100-m+"px",i.style.display="block",i.firstChild&&i.removeChild(i.firstChild),i.appendChild(u),d>0&&(l=setTimeout(function(){i.firstChild&&(a&&e.setAttribute("title",i.firstChild.nodeValue),i.removeChild(i.firstChild),i.style.display="none")},d)),(c||o)&&document.addEventListener("keydown",P,!1)}else e.removeAttribute("title")}}function P(e){var t=W("AccessibleTooltip");27===e.keyCode&&(t.firstChild&&(t.removeChild(t.firstChild),t.style.display="none"),document.removeEventListener("keydown",P,!1))}function V(e,t){var l,a=e.offsetParent;for(l="x"===t?e.offsetLeft:e.offsetTop;null!=a;)l+="x"===t?a.offsetLeft:a.offsetTop,a=a.offsetParent;return l}function W(e,t){var l,a;return l=t||0,document.getElementById(e)&&(a=document.getElementById(e)),document.getElementsByClassName(e)[l]&&(a=document.getElementsByClassName(e)[l]),document.getElementsByTagName(e)[l]&&(a=document.getElementsByTagName(e)[l]),a}function D(e){var t;if([9,13,27,32,33,34,35,36,37,38,39,40,48].indexOf(e.keyCode)>-1)return t=e.keyCode,e.altKey?t="2"+e.keyCode:e.shiftKey&&(t="1"+e.keyCode),t}function M(e,t,l){if(l){var a=new Date;a.setTime(a.getTime()+24*l*60*60*1e3);var i="; expires="+a.toGMTString()}else i="";document.cookie=e+"="+t+i+"; path=/"}function z(e){for(var t=e+"=",l=document.cookie.split(";"),a=0;a<l.length;a++){for(var i=l[a];" "==i.charAt(0);)i=i.substring(1,i.length);if(0==i.indexOf(t))return i.substring(t.length,i.length)}return null}function U(e){M(e,"",-1)}window.onload=function(){document.getElementById("load")&&document.getElementById("load").setAttribute("style","display:none"),function(){var e=document.createElement("h1");e.appendChild(document.createTextNode(lang.ConfigTitle)),e.setAttribute("id",a.Setting.Ctitle),e.setAttribute("class",a.Ctitle.classSetting),W(a.Setting.id).setAttribute("aria-labelledby",a.Setting.Ctitle);var t=document.createElement("button");t.setAttribute("type","button"),t.setAttribute("id",a.Bclose.idConfig),t.className=a.Bclose.classSetting;var l=document.createElement("span");l.className=a.IconFallBack.classSetting;var i=document.createElement("span");i.className=a.Bclose.iconClass,i.setAttribute("aria-hidden","true");var n=document.createElement("img");n.src=a.Bclose.fallBackSrcImg,n.setAttribute("alt",lang.Wclose),n.className=a.Bclose.fallbackClass,l.appendChild(i),l.appendChild(n),t.appendChild(l),e.appendChild(t),W(a.Setting.id).appendChild(e);var s=document.createElement("form");s.setAttribute("id",a.FormConfig.id),s.setAttribute("action","");var d=document.createElement("fieldset");(m=document.createElement("legend")).appendChild(document.createTextNode(lang.Gdys.legend)),d.appendChild(m);var c=document.createElement("fieldset");(m=document.createElement("legend")).appendChild(document.createTextNode(lang.Contrast.legend)),c.appendChild(m);var o=document.createElement("span");o.setAttribute("class","custom-select");var r=document.createElement("select");r.setAttribute("id",a.Contrast.id),o.appendChild(r),(f=document.createElement("label")).setAttribute("for",a.Contrast.id),f.appendChild(document.createTextNode(lang.Contrast.label)),c.appendChild(f),c.appendChild(o);var u=document.createElement("fieldset");(m=document.createElement("legend")).appendChild(document.createTextNode(lang.Gaccess.legend)),u.appendChild(m);var p=document.createElement("fieldset");(m=document.createElement("legend")).appendChild(document.createTextNode(lang.Gslide.legend)),p.appendChild(m);var m,g=document.createElement("fieldset");(m=document.createElement("legend")).appendChild(document.createTextNode(lang.Geffects.legend)),g.appendChild(m);var b=document.createElement("select");b.setAttribute("id","Effects");var f=document.createElement("label");for(var v in f.setAttribute("for","Effects"),f.appendChild(document.createTextNode(lang.LabelEffect)),g.appendChild(f),g.appendChild(b),a)switch(a[v].group){case"Gdys":if(a[v].useIt){var S=document.createElement("input");S.setAttribute("id",a[v].id),S.setAttribute("aria-describedby","help-"+a[v].id),S.setAttribute("type","checkbox"),S.className=a[v].classSetting;var f=document.createElement("label");f.setAttribute("for",a[v].id),f.className=a[v].classLabelSetting;var h=document.createElement("span");h.setAttribute("aria-hidden","true"),h.className=a[v].IconClass,f.appendChild(h),f.appendChild(document.createTextNode(lang[v].label));var C=document.createElement("P");C.setAttribute("id","help-"+a[v].id),C.setAttribute("class",a[v].classHelpSetting),C.appendChild(document.createTextNode(lang[v].help)),d.appendChild(S),d.appendChild(C),d.appendChild(f)}break;case"Gaccess":if(a[v].useIt){var S=document.createElement("input");S.setAttribute("id",a[v].id),S.setAttribute("aria-describedby","help-"+a[v].id),S.setAttribute("type","checkbox"),S.className=a[v].classSetting;var f=document.createElement("label");f.setAttribute("for",a[v].id),f.className=a[v].classLabelSetting;var h=document.createElement("span");h.setAttribute("aria-hidden","true"),h.className=a[v].IconClass,f.appendChild(h),f.appendChild(document.createTextNode(lang[v].label));var C=document.createElement("P");C.setAttribute("id","help-"+a[v].id),C.setAttribute("class",a[v].classHelpSetting),C.appendChild(document.createTextNode(lang[v].help)),u.appendChild(S),u.appendChild(C),u.appendChild(f)}break;case"Gslide":if(a[v].useIt){var S=document.createElement("input");S.setAttribute("id",a[v].id),S.setAttribute("aria-describedby","help-"+a[v].id),S.setAttribute("type","checkbox"),S.className=a[v].classSetting;var f=document.createElement("label");f.setAttribute("for",a[v].id),f.className=a[v].classLabelSetting;var h=document.createElement("span");h.setAttribute("aria-hidden","true"),h.className=a[v].IconClass,f.appendChild(h),f.appendChild(document.createTextNode(lang[v].label));var C=document.createElement("p");C.setAttribute("id","help-"+a[v].id),C.setAttribute("class",a[v].classHelpSetting),C.appendChild(document.createTextNode(lang[v].help)),p.appendChild(S),p.appendChild(C),p.appendChild(f)}break;case"Geffects":if(a[v].useIt){var B=document.createElement("option");B.setAttribute("value",a[v].val),B.appendChild(document.createTextNode(lang[v].help)),b.appendChild(B)}break;case"Gcontrast":var B=document.createElement("option");B.setAttribute("value",a[v].val),B.appendChild(document.createTextNode(lang[v].help)),r.appendChild(B)}s.appendChild(d),s.appendChild(c),s.appendChild(u),s.appendChild(p);var y,A=document.createElement("div");A.setAttribute("id",a.ConfigButton.id),A.setAttribute("class",a.ConfigButton.classSetting),(y=document.createElement("input")).setAttribute("id",a.Bsubmit.id),y.setAttribute("class",a.Bsubmit.classSetting),y.setAttribute("type","submit"),y.setAttribute("title",lang.Bsubmit.title),y.setAttribute("value",lang.Bsubmit.value),A.appendChild(y),(y=document.createElement("input")).setAttribute("id",a.Bdefault.id),y.setAttribute("class",a.Bdefault.classSetting),y.setAttribute("type","submit"),y.setAttribute("title",lang.Bdefault.title),y.setAttribute("value",lang.Bdefault.value),A.appendChild(y),s.appendChild(A),W(a.Setting.id).appendChild(s)}(),function(){var e=window.location.href;t=e.indexOf("#")>0?t=e.slice(0,e.indexOf("#")):e,W(a.FormConfig.id).setAttribute("action",t);for(var l=document.querySelectorAll("#setting form fieldset input, #setting form fieldset span select"),i=0;i<l.length;i++){var n=l[i].getAttribute("id");try{var s=localStorage.getItem(n)}catch(e){var s=z(n)}s?"INPUT"===l[i].nodeName?(1===parseInt(s)&&l[i].setAttribute("checked","checked"),a[n].val=parseInt(s)):"SELECT"===l[i].nodeName&&("Effects"===l[i].getAttribute("id")&&W(a.Screen.id).setAttribute("data-effect",s),l[i].getAttribute("id")===a.Contrast.id&&H(s)):"INPUT"===l[i].nodeName?a[n].val>0&&l[i].setAttribute("checked","checked"):"SELECT"===l[i].nodeName&&(l[i].value=s)}}(),function(){var e=document.createElement("ul");e.setAttribute("id",a.NavBar.id);var t=document.createElement("li");(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.BhelpInfo.id),i.setAttribute("title",lang.BhelpInfo.titleOpen),i.className=a.BhelpInfo.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.BhelpInfo.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.BhelpInfo.fallBackSrcImg,o.setAttribute("alt",lang.BhelpInfo.altOpen),o.className=a.BhelpInfo.fallbackClass,(p=document.createElement("img")).src=a.BhelpInfo.fallBackSmSrcImg,p.setAttribute("alt",""),p.className=a.BhelpInfo.fallbackSmClass,d.appendChild(c),d.appendChild(o),d.appendChild(p),i.appendChild(d),(m=document.createElement("span")).setAttribute("class","small-only");var l=document.createTextNode("Aide");m.appendChild(l),i.appendChild(m),t.appendChild(i),e.appendChild(t);var t=document.createElement("li");(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.BownerInfo.id),i.setAttribute("title",lang.BownerInfo.titleOpen),i.className=a.BownerInfo.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.BownerInfo.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.BownerInfo.fallBackSrcImg,o.setAttribute("alt",lang.BownerInfo.altOpen),o.className=a.BownerInfo.fallbackClass,(p=document.createElement("img")).src=a.BownerInfo.fallBackSmSrcImg,p.setAttribute("alt",""),p.className=a.BownerInfo.fallbackSmClass,d.appendChild(c),d.appendChild(o),d.appendChild(p),i.appendChild(d),(m=document.createElement("span")).setAttribute("class","small-only");var l=document.createTextNode("Informations éditeur");if(m.appendChild(l),i.appendChild(m),t.appendChild(i),e.appendChild(t),W(a.Bdownload.idFile)){var t=document.createElement("li");t.className="small-invisible";var i=document.createElement("button"),n=W(a.Bdownload.idFile),s=n.getAttribute("data-name")+" ("+n.getAttribute("data-type")+", "+n.getAttribute("data-weight")+" "+n.getAttribute("data-lang")+" - "+lang.Bdownload.newWindow+")";i.setAttribute("type","button"),i.setAttribute("id",a.Bdownload.id),i.setAttribute("title",lang.Bdownload.title+" "+s),i.className=a.BhelpInfo.classSetting;var d=document.createElement("span");d.className=a.IconFallBack.classSetting;var c=document.createElement("span");c.className=a.Bdownload.iconClass,c.setAttribute("aria-hidden","true");var o=document.createElement("img");o.src=a.Bdownload.fallBackSrcImg,o.setAttribute("alt",lang.Bdownload.alt+" "+s),o.className=a.BhelpInfo.fallbackClass,d.appendChild(c),d.appendChild(o),i.appendChild(d),t.appendChild(i),e.appendChild(t)}(t=document.createElement("li")).className="small-invisible",(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.Bprint.id),i.setAttribute("title",lang.Bprint.title),i.className=a.Bprint.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.Bprint.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.Bprint.fallBackSrcImg,o.setAttribute("alt",lang.Bprint.title),o.className=a.Bprint.fallbackClass,d.appendChild(c),d.appendChild(o),i.appendChild(d),t.appendChild(i),e.appendChild(t);var t=document.createElement("li");(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.BfullScreen.id),i.setAttribute("title",lang.BfullScreen.title),i.className=a.BfullScreen.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.BfullScreen.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.BfullScreen.fallBackSrcImg,o.setAttribute("alt",lang.BfullScreen.alt),o.className=a.BfullScreen.fallbackClass,(p=document.createElement("img")).src=a.BfullScreen.fallBackSmSrcImg,p.setAttribute("alt",""),p.className=a.BfullScreen.fallbackSmClass,d.appendChild(c),d.appendChild(o),d.appendChild(p),i.appendChild(d),(m=document.createElement("span")).setAttribute("class","small-only");var l=document.createTextNode("Plein écran");m.appendChild(l),i.appendChild(m),t.appendChild(i),e.appendChild(t);var t=document.createElement("li");(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.Bconfig.id),i.setAttribute("title",lang.Bconfig.titleOpen),i.className=a.Bconfig.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.Bconfig.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.Bconfig.fallBackSrcImg,o.setAttribute("alt",lang.Bconfig.altOpen),o.className=a.Bconfig.fallbackClass,(p=document.createElement("img")).src=a.Bconfig.fallBackSmSrcImg,p.setAttribute("alt",""),p.className=a.Bconfig.fallbackSmClass,d.appendChild(c),d.appendChild(o),d.appendChild(p),i.appendChild(d),(m=document.createElement("span")).setAttribute("class","small-only");var l=document.createTextNode("Configuration");m.appendChild(l),i.appendChild(m),t.appendChild(i),e.appendChild(t);var t=document.createElement("li");(v=document.createElement("div")).setAttribute("id",a.SelectWrapper.id),v.className=a.SelectWrapper.classSetting;var r=document.createElement("span");r.setAttribute("class","custom-select");var u=document.createElement("select");u.setAttribute("id",a.Select.id),u.setAttribute("title",lang.Select.title),u.className=a.Select.classSetting,r.appendChild(u),v.appendChild(r),(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.Bselect.id),i.setAttribute("title",lang.Bselect.title),i.className=a.Bselect.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.Bselect.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.Bselect.fallBackSrcImg,o.setAttribute("alt",lang.Bselect.title),o.className=a.Bselect.fallbackClass,(p=document.createElement("img")).src=a.Bselect.fallBackSmSrcImg,p.setAttribute("alt",""),p.className=a.Bselect.fallbackSmClass,d.appendChild(c),d.appendChild(o),d.appendChild(p),i.appendChild(d),(m=document.createElement("span")).setAttribute("class","small-only");var l=document.createTextNode(lang.Bselect.title);m.appendChild(l),i.appendChild(m),v.appendChild(i),t.appendChild(v),e.appendChild(t);var p,m,g=document.createElement("nav");g.setAttribute("role","navigation"),g.setAttribute("id","summary-container"),(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.Btoc.id),i.setAttribute("title",lang.Btoc.titleOpen),i.className=a.Btoc.classSetting,(d=document.createElement("span")).className=a.IconFallBack.classSetting,(c=document.createElement("span")).className=a.Btoc.iconClass,c.setAttribute("aria-hidden","true"),(o=document.createElement("img")).src=a.Btoc.fallBackSrcImg,o.setAttribute("alt",lang.Btoc.altOpen),o.className=a.Btoc.fallbackClass,(p=document.createElement("img")).src=a.Btoc.fallBackSmSrcImg,p.setAttribute("alt",""),p.className=a.Btoc.fallbackSmClass,(m=document.createElement("span")).setAttribute("class","small-only");var l=document.createTextNode("sommaire");m.appendChild(l),d.appendChild(c),d.appendChild(o),d.appendChild(p),i.appendChild(d),i.appendChild(m),g.appendChild(i);var b=document.createElement("div");b.setAttribute("id",a.SlideCounter.id),b.className=a.SlideCounter.classSetting;var f,v=document.createElement("div");(f=document.createElement("span")).appendChild(document.createTextNode("1")),f.setAttribute("id",a.SlideCounter.idCurrent),f.className=a.SlideCounter.currentClass,v.appendChild(f),(f=document.createElement("span")).appendChild(document.createTextNode(lang.Ndxon)),f.className=a.SlideCounter.isHiddenClass,v.appendChild(f),(f=document.createElement("span")).setAttribute("id",a.SlideCounter.idTotal),f.appendChild(document.createTextNode("999")),f.className=a.SlideCounter.totalClass,v.appendChild(f),b.appendChild(v),W(a.WrapperNav.id).appendChild(e),W(a.WrapperNav.id).appendChild(g),W(a.Wrapper.id).appendChild(b)}(),function(){var e=W(a.PrevNext.id),t=document.createElement("ul"),l=document.createElement("li");(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.Bprev.id),i.setAttribute("title",lang.Bprev.title),i.className=a.Bprev.classSetting,(n=document.createElement("span")).className=a.IconFallBack.classSetting,(s=document.createElement("span")).className=a.Bprev.iconClass,s.setAttribute("aria-hidden","true"),(d=document.createElement("img")).src=a.Bprev.fallBackSrcImg,d.setAttribute("alt",lang.Bprev.title),d.className=a.Bprev.fallbackClass,n.appendChild(s),n.appendChild(d),i.appendChild(n),l.appendChild(i),t.appendChild(l);var i,n,s,d,l=document.createElement("li");(i=document.createElement("button")).setAttribute("type","button"),i.setAttribute("id",a.Bnext.id),i.setAttribute("title",lang.Bnext.title),i.className=a.Bnext.classSetting,(n=document.createElement("SPAN")).className=a.IconFallBack.classSetting,(s=document.createElement("SPAN")).className=a.Bnext.iconClass,s.setAttribute("aria-hidden","true"),(d=document.createElement("img")).src=a.Bnext.fallBackSrcImg,d.setAttribute("alt",lang.Bnext.title),d.className=a.Bnext.fallbackClass,n.appendChild(s),n.appendChild(d),i.appendChild(n),l.appendChild(i),t.appendChild(l),e.appendChild(t)}(),1===a.VocalizeNdiapo.val&&W(a.SlideCounter.id).setAttribute("aria-live","polite"),1===a.VocalizeNdiapo.val&&W(a.SlideCounter.id).setAttribute("aria-atomic","false"),1===a.GotoBnext.val&&W(a.Bnext.id).focus(),1===a.SoundTxt.val&&T(a.Stexte.file,a.Stexte.id),1===a.SoundSlide.val&&T(a.Sdiapo.file,a.Sdiapo.id),1===a.SoundSlide1.val&&T(a.Sdiapo1.file,a.Sdiapo1.id),1===a.SoundSlideEnd.val&&T(a.Sdiapoend.file,a.Sdiapoend.id),function(){1===a.FontDyslexia.val?document.querySelector("body").classList.add(a.FontDyslexia.classSettingEffect):document.querySelector("body").classList.remove(a.FontDyslexia.classSettingEffect);1===a.LineSpaceDyslexia.val?document.querySelector("body").classList.add(a.LineSpaceDyslexia.classSettingEffect):document.querySelector("body").classList.remove(a.LineSpaceDyslexia.classSettingEffect);1===a.NoJustify.val?document.querySelector("body").classList.add(a.NoJustify.classSettingEffect):document.querySelector("body").classList.remove(a.NoJustify.classSettingEffect)}(),function(){try{i=parseInt(sessionStorage.Scurrent),sessionStorage.clear()}catch(e){i=parseInt(z("Scurrent")),U("Scurrent")}i||(i=0);n=document.getElementsByClassName(a.Slide.classSetting),0===a.ModePlan.val&&m();W(a.SlideCounter.idCurrent).firstChild.nodeValue=i+1,1===a.VocalizeTitle.val&&O();W(a.SlideCounter.idTotal).firstChild.nodeValue=n.length,n[i].className=n[i].className+" active",1===a.SoundSlide1.val&&0===i&&W(a.Sdiapo1.id).play();1===a.UpWindowTitle.val&&q();0===a.ModePlan.val?(W(a.Screen.id).classList.remove("modeplan"),0!==i&&i!==n.length-1||W(a.Banner.id).classList.add("is-hidden"),k()):(W(a.Screen.id).classList.add("modeplan"),W(a.Screen.id).setAttribute("data-effect","noEffect"),function(){for(var e=0,t=n.length;e<t;e++){var l=document.createElement("p"),i=document.createElement("span"),s=document.createTextNode(e+1+" / "+t);i.appendChild(s),l.appendChild(i),l.setAttribute("class",a.LinearIndexTag.classSetting),n[e].appendChild(l)}}());!function(){var e,t,l={},i=document.createElement("div");i.setAttribute("role","document");var s=document.createElement("h1");s.setAttribute("id",a.Summary.Ctitle),s.appendChild(document.createTextNode(lang.SummaryTitle));var d=document.createElement("button");d.setAttribute("type","button"),d.setAttribute("id",a.Bclose.idSummary),s.setAttribute("class",a.Ctitle.classSetting),d.className=a.Bclose.classSetting;var c=document.createElement("span");c.className=a.IconFallBack.classSetting;var o=document.createElement("span");o.className=a.Bclose.iconClass,o.setAttribute("aria-hidden","true");var r=document.createElement("img");r.src=a.Bclose.fallBackSrcImg,r.setAttribute("alt",lang.Wclose),r.className=a.Bclose.fallbackClass,c.appendChild(o),c.appendChild(r),d.appendChild(c),s.appendChild(d),W(a.Summary.id).appendChild(s);var u=document.createElement("ul");t=0;for(var p=0;p<n.length;p++){if(e=n[p].querySelector("h1,h2"),1===t&&(m.appendChild(v),t=0),e){var m=document.createElement("li"),g=document.createElement("a");l=e.innerText||e.textContent;var b=document.createTextNode(l);g.appendChild(b);var f=p+1;g.setAttribute("href","#D"+f),m.appendChild(g),u.appendChild(m)}else if(n[p].querySelector("h3")&&(e=n[p].querySelector("h3"))){if(0===t){var v=document.createElement("ul");t=1}var S=document.createElement("li"),h=document.createElement("a");l=e.innerText||e.textContent;var C=document.createTextNode(l);h.appendChild(C);var f=p+1;h.setAttribute("href","#D"+f),S.appendChild(h),v.appendChild(S)}g&&(g.addEventListener("focus",function(){this.getAttribute("title")&&G(this)},!1),g.addEventListener("blur",function(){this.getAttribute("title")&&G(this,!0)},!1)),h&&(h.addEventListener("focus",function(){this.getAttribute("title")&&G(this)},!1),h.addEventListener("blur",function(){this.getAttribute("title")&&G(this,!0)},!1))}i.appendChild(u),W(a.Summary.id).appendChild(i)}()}(),function(){for(var e,t=0,l=n.length;t<l;t++)e=t+1,n[t].setAttribute("id","D"+e)}(),function(){var e=document.createElement("option"),t=document.createTextNode("-");e.setAttribute("value",""),e.appendChild(t),document.getElementById(a.TocSelect.id).appendChild(e);for(var l=0,i=n.length;l<i;l++){var e=document.createElement("option"),s=l,t=document.createTextNode(s+1);e.setAttribute("value",s),e.appendChild(t),document.getElementById(a.TocSelect.id).appendChild(e)}}(),function(){var e=document.createElement("h1");e.setAttribute("id",a.OwnerInfo.Ctitle),e.appendChild(document.createTextNode(lang.OwnerInfoTitle)),e.setAttribute("class",a.Ctitle.classSetting);var t=document.createElement("button");t.setAttribute("type","button"),t.setAttribute("id",a.Bclose.idOwnerInfo),t.className=a.Bclose.classSetting;var l=document.createElement("span");l.className=a.IconFallBack.classSetting;var i=document.createElement("span");i.className=a.Bclose.iconClass,i.setAttribute("aria-hidden","true");var n=document.createElement("img");n.src=a.Bclose.fallBackSrcImg;var s=document.getElementById(a.OwnerInfo.id);s.getAttribute("data-close")?(t.setAttribute("title",s.getAttribute("data-close")),n.setAttribute("alt",s.getAttribute("data-close"))):(t.setAttribute("title",lang.BownerInfo.titleClose),n.setAttribute("alt",lang.BownerInfo.altClose));n.className=a.Bclose.fallbackClass,l.appendChild(i),l.appendChild(n),t.appendChild(l),e.appendChild(t);var d=W(a.OwnerInfo.id).querySelector("div");W(a.OwnerInfo.id).insertBefore(e,d),W(a.OwnerInfo.id).setAttribute("aria-labelledby",a.OwnerInfo.Ctitle)}(),function(){var e=document.createElement("h1");e.setAttribute("id",a.HelpInfo.Ctitle),e.appendChild(document.createTextNode(lang.HelpInfoTitle)),e.setAttribute("class",a.Ctitle.classSetting);var t=document.createElement("button");t.setAttribute("type","button"),t.setAttribute("id",a.Bclose.idHelpInfo),t.className=a.Bclose.classSetting;var l=document.createElement("span");l.className=a.IconFallBack.classSetting;var i=document.createElement("span");i.className=a.Bclose.iconClass,i.setAttribute("aria-hidden","true");var n=document.createElement("img");n.src=a.Bclose.fallBackSrcImg;var s=document.getElementById(a.HelpInfo.id);s.getAttribute("data-close")?(t.setAttribute("title",s.getAttribute("data-close")),n.setAttribute("alt",s.getAttribute("data-close"))):(t.setAttribute("title",lang.BhelpInfo.titleClose),n.setAttribute("alt",lang.BhelpInfo.altClose));n.className=a.Bclose.fallbackClass,l.appendChild(i),l.appendChild(n),t.appendChild(l),e.appendChild(t);var d=W(a.HelpInfo.id).querySelector("div");W(a.HelpInfo.id).insertBefore(e,d),W(a.HelpInfo.id).setAttribute("aria-labelledby",a.HelpInfo.Ctitle)}(),function(){for(var e,t=0,l=n.length;t<l;t++){var a=n[t].querySelector("h2");a?e=t:n[t].setAttribute("data-breadcrumb",e)}}(),0===a.ModePlan.val&&0===a.Noclick.val&&document.addEventListener("click",function(e){o.indexOf(document.activeElement.tagName)<0&&g()},!0);var e=W(a.Wrapper.id);function l(){window.matchMedia("(max-width:60em)").matches&&(e.setAttribute("class","small"),Hammer(e).on("swiperight",function(e){b()},!1),Hammer(e).on("swipeleft",function(e){g()},!1))}l(),e.addEventListener("resize",l),document.addEventListener("keydown",function(e){248==D(e)&&h(),0===a.ModePlan.val&&(32!==D(e)||document.getElementById(a.Setting.id).contains(e.target)||(g(),e.preventDefault()),39!==D(e)&&34!==D(e)||(g(),e.preventDefault()),37!==D(e)&&33!==D(e)&&132!=D(e)||(b(),e.preventDefault()),36===D(e)&&(i=0,f(),e.preventDefault()),35===D(e)&&(i=n.length-1,f(),e.preventDefault()),13===D(e)&&o.indexOf(document.activeElement.tagName)<0&&(g(),e.preventDefault()))},!1),W(a.Bnext.id).addEventListener("click",g,!1),W(a.Bprev.id).addEventListener("click",b,!1),W(a.Btoc.id).addEventListener("click",h,!1),W(a.Bclose.idSummary).addEventListener("click",A,!1),W(a.BownerInfo.id).addEventListener("click",B,!1),W(a.Bclose.idOwnerInfo).addEventListener("click",A,!1),W(a.BhelpInfo.id).addEventListener("click",y,!1),W(a.Bclose.idHelpInfo).addEventListener("click",A,!1),W(a.Select.id).addEventListener("change",function(){W(a.Bselect.id).removeAttribute("disabled","disabled"),W(a.Bselect.id).focus()},!1),W(a.Bselect.id).addEventListener("blur",function(){W(a.Select.id).value="",W(a.Bselect.id).setAttribute("disabled","disabled")},!1),W(a.Bselect.id).addEventListener("click",v,!1),W(a.Bconfig.id).addEventListener("click",C,!1),W(a.Bclose.idConfig).addEventListener("click",A,!1),W(a.Bsubmit.id).addEventListener("click",function(e){!function(){for(var e=document.querySelectorAll("#setting form fieldset input, #setting form fieldset span select"),t=0,l=e.length;t<l;t++){var i,n=e[t].getAttribute("id");"INPUT"===e[t].nodeName&&(i=e[t].checked?1:0,a[n].val=i),"SELECT"===e[t].nodeName&&(i=e[t].value);try{localStorage.setItem(n,i)}catch(e){M(n,i,0)}}}(),e.preventDefault(),window.location.reload()},!1),W(a.Bdefault.id).addEventListener("click",F,!1),W(a.Bprint.id).addEventListener("click",x,!1),W(a.BfullScreen.id).addEventListener("click",function(){screenfull.toggle()},!1),function(){for(var e=document.querySelectorAll("."+a.ObjectFullScreen.classSetting),t=0,l=e.length;t<l;t++)e[t].setAttribute("tabindex","0"),e[t].addEventListener("click",function(){screenfull.request(this)},!1)}(),a.SumModOn.val,document.addEventListener("focus",function(e){r&&!r.contains(e.target)&&(e.stopPropagation(),r.focus())},!0),W(a.Bdownload.idFile)&&W(a.Bdownload.id).addEventListener("click",L,!1),document.addEventListener("keydown",function(e){r&&27==D(e)&&(A(),r=null)},!0),function(e,t,l){for(var a=0;a<p.length;a++)p[a]||(t=t.toLowerCase()),e.addEventListener(p[a]+t,l,!1)}(W(a.Flap.id),"AnimationEnd",function(){W(a.Flap.id).removeAttribute("class")}),window.onbeforeunload=function(){try{sessionStorage.setItem("Scurrent",i)}catch(e){M("Scurrent",i,0)}},E(),window.onhashchange=E,W(a.Nav.id).addEventListener("focus",function(){W(a.Nav.id).classList.remove(a.Nav.classSettingInvisible),W(a.Nav.id).classList.add(a.Nav.classSettingVisible)},!1),W(a.Nav.id).addEventListener("blur",function(){W(a.Nav.id).classList.remove(a.Nav.classSettingVisible),W(a.Nav.id).classList.add(a.Nav.classSettingInvisible)},!1),function(){for(var e=W(a.Nav.id).querySelectorAll("*"),t=0,l=e.length;t<l;t++)e[t].addEventListener("focus",function(){W(a.Nav.id).classList.remove("navbar-invisible"),W(a.Nav.id).classList.add("navbar-visible"),this.getAttribute("title")&&G(this)},!1),e[t].addEventListener("blur",function(){W(a.Nav.id).classList.remove("navbar-visible"),W(a.Nav.id).classList.add("navbar-invisible"),G(this,!0)},!1)}()}}();
+/**
+AccessReader
+GPL licence
+https://gitlab.com/Access42net/AccessReader/
+Copyright (c) 2015 Access42, access42.net
+**/
+
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
+
+var AccessReader = ( function(){
+
+	'use strict';
+/**
+Configuration
+**/
+var config = {
+	/** Conteners **/
+	Screen: {
+		id: 'screen'
+	},
+	Banner: {
+		id: 'banner'
+	},
+	Nav: {
+		id: 'nav-wrapper',
+		classSettingVisible: 'navbar-visible',
+		classSettingInvisible: 'navbar-invisible'
+	},
+	NavBar: {
+		id: 'navbar'
+	},
+	PrevNext: {
+		id: 'prev-next'
+	},
+	WrapperNav: {
+		id: 'wrappernav'
+	},
+	Wrapper: {
+		id: 'wrapper',
+		classSettingLeft: 'Cagauche'
+	},
+	Flap: {
+		id: 'volet'
+	},
+	Slide: {
+		classSetting: 'slide'
+	},
+	Summary: {
+		id: 'sommaire',
+		classSettingFixed: 'fixed tool-block tool-block-summary',
+		Ctitle: 'Ct'
+	},
+	SummaryLinkActive: {
+		classSetting: 'summary-link-active'
+	},
+	Setting: {
+		id: 'setting',
+		Ctitle: 'Ctitle'
+	},
+	OwnerInfo: {
+		id: 'owner-info',
+		classSetting: 'owner-info',
+		Ctitle: 'Ctitle-Owner-Info'
+	},
+	HelpInfo: {
+		id: 'help-info',
+		classSetting: 'help-info',
+		Ctitle: 'Ctitle-help-Info'
+	},
+	FormConfig: {
+		id: 'FormConfig'
+	},
+	ConfigButton: {
+		id: 'configbutton',
+		classSetting: 'btn-group-settings'
+	},
+	LinearIndexTag: {
+		classSetting: 'index'
+	},
+	LiveSlideTitle: {
+		id: 'Dcourante'
+	},
+	Breadcrumb: {
+		id: 'breadcrumb',
+		classSetting: 'breadcrumb'
+	},
+	SkipLink: {
+		id: 'skip-link',
+		classSetting: 'skip-link'
+	},
+	//Object fullscreen setting
+	//ClassName for object to set fullscreen event
+	ObjectFullScreen: {
+		classSetting: 'full-screen-object'
+	},
+/** Effects 
+	val: entry value name 
+	classSetting: CSS classname effect,
+	flap: true for flap effect
+	slide: true for slide effect
+	To set a new effect in four simples steps :
+	1. Create a CSS class
+	2. Create an entry in this section
+	Example :
+	NameOfEffect: {
+		val: NameOfEffect,
+		classSetting: 'yeah',
+		flap: false,
+		slide: true
+	}
+	3. Create an entry in the configuration lang file
+	NameOfEffect: {
+		help: 'the yeaaah effect' //text for option value in effects dropdown
+	}
+	Important : don't delete Eno entry
+	useIt : true to set, false to ignore
+	**/
+	// Noeffects , please dont change !
+	Eno: { 
+		useIt: true,
+		val: 'Eno',
+		flap: false,
+		slide: false,
+		group: 'Geffects'
+	},
+	// Fadein
+//	Efadin: {
+//		useIt: true,
+//		val: 'Efadin',
+//		classSetting: 'fadein', 
+//		flap: false,
+//		slide: true,
+//		group: 'Geffects' 
+//	},
+//	// Flap left to right
+//	Eleft: {
+//		useIt: false,
+//		val: 'Eleft',
+//		classSetting: 'ALTR',
+//		flap: true,
+//		slide: false,
+//		group: 'Geffects' 
+//	},
+//	// flap right to left
+//	Eright: {
+//		useIt: false,
+//		val: 'Eright',
+//		classSetting: 'ARTL',
+//		flap: true,
+//		slide: false,
+//		group: 'Geffects' 
+//	},
+//	// flap bottom to top
+//	Ebottom: { 
+//		useIt: false,
+//		val: 'Ebottom',
+//		classSetting: 'ATtoT',
+//		flap: true,
+//		slide: false,
+//		group: 'Geffects' 
+//	},
+//	// flap top to bottom
+//	Etop: { 
+//		useIt: false,
+//		val: 'Etop',
+//		classSetting: 'ATtoB',
+//		flap: true,
+//		slide: false,
+//		group: 'Geffects'
+//	},
+//	// Flash
+//	Flash: {
+//		useIt: true,
+//		val: 'Flash',
+//		classSetting: 'Flash',
+//		flap: true,
+//		slide: false,
+//		group: 'Geffects' 
+//	},
+//	// Scale
+//	Escale: {
+//		useIt: true,
+//		val: 'Escale',
+//		classSetting: 'Escale', 
+//		flap: false,
+//		slide: true,
+//		group: 'Geffects' 
+//	},
+//	// FLIP
+//	Flip: {
+//		useIt: true,
+//		val: 'Flip',
+//		classSetting: 'Flip', 
+//		flap: false,
+//		slide: true,
+//		group: 'Geffects' 
+//	},
+//	
+//	TurnPage: {
+//		useIt: true,
+//		val: 'TurnPage',
+//		classSetting: 'TurnPage',
+//		flap: false,
+//		slide: true,
+//		group: 'Geffects' 
+//	},
+	/** Players **/
+	Stexte: {
+		id: 'Stexte',
+		file: 'bip_texte_masque'
+	},
+	Sdiapo: {
+		id: 'Sdiapo',
+		file: 'bip_diapo_on'
+	},
+	Sdiapo1: {
+		id: 'Sdiapo1',
+		file: 'bip_diapo1_on'
+	},
+	Sdiapoend: {
+		id: 'Sdiapoend',
+		file: 'bip_diapo_end'
+	},
+	Caudio: {
+		id: 'Caudio'
+	},
+	/** Hidden Content Class **/
+	HiddenContent: {
+		classSetting: 'Cmasque'
+	},
+	/** Accessibility 
+		useIt : true to set, false to ignore
+	**/
+	//vocalize slide number on total (1 on 4 for example)
+	VocalizeNdiapo: { 
+		useIt: true,
+		id: 'VocalizeNdiapo',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound',
+		val: 0,
+		group: 'Gaccess' 
+	} ,
+	//Play a sound (beep) when displaying hidden text
+	SoundTxt: { 
+		useIt: false,
+		id: 'SoundTxt', 
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound',
+		val: 0, 		
+		group: 'Gaccess' 
+	},
+	//Play a sound (beep) when displaying a slide
+	SoundSlide: { 
+		useIt: true,
+		id: 'SoundSlide', 
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound', 
+		val: 0, 
+		group: 'Gaccess' 
+	},
+	//Play a sound (beep) when displaying first slide
+	SoundSlide1: { 
+		useIt: true,
+		id: 'SoundSlide1',  
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound',
+		val: 0, 
+		group: 'Gaccess' 
+	},
+	//Play a sound (beep) when displaying last slide
+	SoundSlideEnd: { 
+		useIt: true,
+		id: 'SoundSlideEnd', 
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound',
+		val: 0, 
+		group: 'Gaccess' 
+	},
+	//Vocalize the heading of the current slide
+	VocalizeTitle: { 
+		useIt: true,
+		id: 'VocalizeTitle', 
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound',
+		val: 0, 		
+		group : 'Gaccess' 
+	},
+	//Update the window heading
+	UpWindowTitle: { 
+		useIt: true,
+		id: 'UpWindowTitle',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-sound',
+		IconClass: 'icon icon-setting-sound',		
+		val: 0 , 
+		group: 'Gaccess' 
+	},
+	//Skip to the "next" button on slideshow onload
+	GotoBnext: { 
+		useIt: true,
+		id: 'GotoBnext',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-next',
+		IconClass: 'icon icon-setting-next',		
+		val: 0,  
+		group: 'Gaccess' 
+	},
+	//Deactivate click button function to go to next slide
+	Noclick:  { 
+		useIt: true,
+		id: 'Noclick',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-mouse',
+		IconClass: 'icon icon-setting-mouse',		
+		val: 1,  
+		group: 'Gaccess' 
+	},
+	//Dyslexia
+	FontDyslexia: {
+		useIt: true,
+		id: 'FontDyslexia',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-font-dyslexia',
+		IconClass: 'icon icon-setting-font-dyslexia',
+		val: 0,  
+		group: 'Gdys',
+		classSettingEffect: 'dys-f'
+	},
+	LineSpaceDyslexia: {
+		useIt: true,
+		id: 'LineSpaceDyslexia',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-line-space-dyslexia',
+		IconClass: 'icon icon-setting-line-space-dyslexia',		
+		val: 0,  
+		group: 'Gdys',
+		classSettingEffect: 'dys-l' 		
+	},
+	NoJustify: {
+		useIt: false,
+		id: 'NoJustify',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-no-justify',
+		IconClass: 'icon icon-setting-no-justify',		
+		val: 0,  
+		group: 'Gdys',
+		classSettingEffect: 'dys-j'		
+	},
+	//Contrast
+	Contrast: {
+		id: 'contrastSelect',
+	},
+	ContrastDefault:{
+		val: 'default-c',
+		always: true,
+		group: 'Gcontrast',
+	},
+	ContrastInvert:{
+		val: 'inv-c',
+		always: true,
+		group: 'Gcontrast'
+	},
+	ContrastEnforced:{
+		val: 'high-c',
+		always: false,
+		group: 'Gcontrast'
+	},
+	/** Slideshow parameters 
+		useIt : true to set, false to ignore
+	**/
+	// Display summary as :
+	// 0 : no-modal window
+	// 1 : modal window
+	SumModOn: { 
+		useIt: true,
+		id: 'SumModOn',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-summary',
+		IconClass: 'icon icon-setting-summary',		
+		val: 1,  
+		group: 'Gslide' 
+	},
+	// Switch ModePlan=1 for Linear Layout
+	ModePlan: { 
+		useIt: true,
+		id: 'ModePlan',
+		classSetting : 'input-setting',
+		classHelpSetting: 'help',
+		classLabelSetting: 'label-setting setting-plan',
+		IconClass: 'icon icon-setting-plan',		
+		val: 0,   
+		group: 'Gslide' 
+	},
+	/** Misceallanous **/
+	// Setting configuration buttons
+	Bsubmit: {
+		id: 'setconfig',
+		classSetting: 'btn-setting'
+	},
+	Bdefault: {
+		id: 'resetconfig',
+		classSetting: 'btn-setting'
+	},
+	//Close buttons
+	Bclose: {
+		idSummary: 'close',
+		idConfig: 'Close2',
+		idOwnerInfo: 'Close3',
+		idHelpInfo : 'Close4',
+		classSetting: 'btn-close',
+		iconClass: 'icon icon-close',
+		fallbackClass : 'text',
+		fallBackSrcImg:'img/close.png'
+	},
+	/** Setting navbar
+		Setting navbar button and select
+		classSetting : CSS classNames
+		iconClass : CSS class for icon font injection
+	**/
+	Bprev: {
+		id: 'prev',
+		classSetting: 'tool-bar-elt btn btn-prev',
+		iconClass: 'icon icon-prev',
+		fallbackClass : 'text',
+		fallBackSrcImg:'img/prev.png'
+	},
+	Bnext: {
+		id: 'next',
+		classSetting: 'tool-bar-elt btn btn-next',
+		iconClass: 'icon icon-next',
+		fallbackClass : 'text',
+		fallBackSrcImg:'img/next.png'
+	},
+	Select:{
+		id: 'tocP',
+		classSetting: 'select-goto'
+	},
+	Bselect: {
+		id: 'tocp',
+		classSetting: 'btn btn-goto',
+		iconClass: 'icon icon-goto',
+		fallbackClass : 'text medium-only',
+		fallBackSrcImg:'img/goto.png',
+		fallBackSmSrcImg:'img/goto-sm.png',
+		fallbackSmClass : 'text small-only',
+	},
+	Btoc: {
+		id: 'toc',
+		classSetting: 'tool-bar-elt btn btn-block-summary',
+		iconClass: 'icon icon-summary',
+		fallbackClass : 'text medium-only',
+		fallBackSrcImg:'img/summary.png',
+		fallBackSmSrcImg:'img/summary-sm.png',
+		fallbackSmClass : 'text small-only',
+	},
+	Bconfig: {
+		id: 'set',
+		classSetting: 'tool-bar-elt btn btn-block-settings',
+		iconClass: 'icon icon-settings',
+		fallbackClass : 'text medium-only',
+		fallBackSrcImg:'img/settings.png',
+		fallBackSmSrcImg:'img/settings-sm.png',
+		fallbackSmClass : 'text small-only',
+	},
+	//print
+	Bprint: {
+		id: 'print',
+		classSetting: 'tool-bar-elt btn btn-block-print',
+		iconClass: 'icon icon-print',
+		fallbackClass : 'text',
+		fallBackSrcImg:'img/print.png'
+	},
+	//fullscreen
+	BfullScreen: {
+		id: 'full-screen-button',
+		classSetting: 'tool-bar-elt btn btn-block-fullscreen',
+		iconClass: 'icon icon-fullscreen',
+		iconClassExit: 'icon icon-fullscreen-exit',
+		fallbackClass : 'text medium-only',
+		fallBackSrcImg:'img/fullscreen.png',
+		fallBackSrcImgExit: 'img/fullscreen-exit.png',
+		fallBackSmSrcImg : 'img/fullscreen-sm.png',
+		fallbackSmClass : 'text small-only',
+	},
+	//Owner-info
+	BownerInfo: {
+		id: 'owner-info-button',
+		classSetting: 'tool-bar-elt btn btn-block-owner',
+		iconClass: 'icon icon-owner-info',
+		fallbackClass : 'text medium-only',
+		fallBackSrcImg:'img/owner-info.png',
+		fallBackSmSrcImg:'img/owner-info-sm.png',
+		fallbackSmClass : 'text small-only',		
+	},
+	//Help-info
+	BhelpInfo: {
+		id: 'help-info-button',
+		classSetting: 'tool-bar-elt btn btn-block-help',
+		iconClass: 'icon icon-help-info',
+		fallbackClass : 'text medium-only',
+		fallBackSrcImg:'img/help-info.png',
+		fallBackSmSrcImg:'img/help-info-sm.png',
+		fallbackSmClass : 'text small-only',		
+	},	
+	//Download PDF
+	Bdownload: {
+		id: 'pdf-download-button',
+		idFile: 'download-file',
+		classSetting: 'tool-bar-elt btn btn-block-pdf',
+		iconClass: 'icon icon-pdf-download',
+		fallbackClass : 'text',
+		fallBackSrcImg:'img/pdf-download.png'	
+	},
+	SelectWrapper: {
+		id: 'Fgo',
+		classSetting: 'tool-bar-elt'
+	},
+	TocSelect : {
+		id: 'tocP',
+	},
+	SlideCounter: {
+		id: 'cpt',
+		idCurrent: 'current',
+		idTotal: 'total',
+		classSetting: 'tool-bar-elt slide-counter',
+		currentClass: 'tool-bar-elt slide-counter-current',
+		isHiddenClass: 'sr',
+		totalClass: 'tool-bar-elt slide-counter-total'
+	},
+	IconFallBack: {
+		classSetting: 'icon-fallback-text'
+	},
+	Ctitle:{
+		classSetting: 'tool-block-title'
+	}
+}
+/** End configuration setting **/
+/** Global variables **/
+// Modal config
+var ConfigModOn = 1;
+// Current Slide
+var current = 0;
+// Slide array
+var TabSlide = [];
+// Hidden content array
+var TabTextSlide = [];
+// Current hidden content
+var Tcurrent = 0;
+var Tcontrol = 0;
+// Filter Tag clickable content
+var TagListFiltre = new Array('BUTTON','A','SELECT','INPUT','AUDIO','VIDEO','TEXTAREA','LABEL');
+// Modale window object (use for trapping focus and esc shutdown)
+var openDial = null;
+// Freeze hidden content if necessary
+var TopenDial;
+// Window title
+var WTitre = document.title;
+// CSS3 animation prefix
+var pfx = ["webkit", "moz", "MS", "o", ""];
+// Switch locale storage (for IE on local mode)
+var Storage = 0;
+// Base URL (used for reload the switch linear layout)
+var BaseUrl;
+// Breacrumb header
+var BreadcrumbH2;
+/**
+ Onload 
+ **/
+window.onload = function() {
+	// Unset loader
+	if( document.getElementById('load') ) 
+		document.getElementById('load').setAttribute('style','display:none');
+	// Initialize UI controls and Config
+	PushConfig();
+	GetConfig();
+	PushNavBar();
+	PushPrevNext()
+	// Initialize access config
+	if( config.VocalizeNdiapo.val === 1 )$( config.SlideCounter.id ).setAttribute( 'aria-live', 'polite' );
+	if( config.VocalizeNdiapo.val === 1 )$( config.SlideCounter.id ).setAttribute( 'aria-atomic', 'false' );
+	if( config.GotoBnext.val === 1 )$( config.Bnext.id ).focus();
+	if( config.SoundTxt.val === 1 )SetSon( config.Stexte.file, config.Stexte.id );
+	if( config.SoundSlide.val === 1 )SetSon( config.Sdiapo.file, config.Sdiapo.id );
+	if( config.SoundSlide1.val === 1 )SetSon( config.Sdiapo1.file, config.Sdiapo1.id );
+	if( config.SoundSlideEnd.val === 1 )SetSon( config.Sdiapoend.file, config.Sdiapoend.id );
+	//font dys
+	SetFontFamily();
+	//contrast
+	//SetContrast();
+	// Initialize the slideshow array
+	InitTabSlide();
+	// Init skiplink Ndx and anchor for layout mode
+	setSkipLinkId();
+	// Set the Toc index select
+	TocP();
+	// Set owner info
+	SetOwnerInfo();
+	// Set help info
+	SetHelpInfo();
+	// Set breadcrumb
+	setBreadCrumb();
+	/* Events manager */
+	// Event click for next slide
+	if( config.ModePlan.val === 0 && config.Noclick.val === 0 ){
+		document.addEventListener( 'click', function( e ) {
+			if ( TagListFiltre.indexOf( document.activeElement.tagName ) < 0 ) {
+				GotoNext();	
+			}
+		}, true);
+	}
+
+    // Event hammer pan
+    var targetPan = $( config.Wrapper.id );
+
+		function resizeHamm(){
+    	if (window.matchMedia("(max-width:60em)").matches) {
+    	targetPan.setAttribute('class','small');
+			Hammer( targetPan ).on('swiperight', function(ev){ GotoPrev() }, false);
+			Hammer( targetPan ).on('swipeleft', function(ev){ GotoNext() }, false);
+    	}
+		}
+		resizeHamm();
+		targetPan.addEventListener('resize', resizeHamm);
+ 	
+
+	// Event Keys
+	// Left: 37, Right :39, Spacebar: 32, Enter: 13, pageDown:34, pageUp:33 (for remote control), Open summary: ALT+0 ([2]48), Home:36, End:35, special previous slide for screen reader : SHIFT+Spacebar ([1]32).
+	document.addEventListener( 'keydown', function( e ) {
+			if ( key( e ) == 248 ) { OpenToc(); }
+			if( config.ModePlan.val === 0 ){
+				if ( key( e ) === 32 && !document.getElementById( config.Setting.id ).contains( e.target ) ) { GotoNext(); e.preventDefault(); }
+				if ( key( e ) === 39 || key( e ) === 34 ) { GotoNext(); e.preventDefault(); }
+				if ( key( e ) === 37 || key( e ) === 33 || key( e ) == 132 ) { GotoPrev(); e.preventDefault(); }
+				if ( key( e ) === 36 ) { current = 0; GotoSlide(); e.preventDefault(); }
+				if ( key( e ) === 35 ) { current = TabSlide.length - 1; GotoSlide(); e.preventDefault(); }
+				if ( key( e ) === 13 ) {
+					if ( TagListFiltre.indexOf( document.activeElement.tagName ) < 0 ) {
+						GotoNext();	
+						e.preventDefault();
+					}
+			}
+		}
+	}, false);
+	// Events Nav Button 
+	$( config.Bnext.id ).addEventListener( "click", GotoNext, false );
+	$( config.Bprev.id ).addEventListener( "click", GotoPrev, false );
+	// Event open/close TOC
+	$( config.Btoc.id ).addEventListener( "click", OpenToc, false );
+	$( config.Bclose.idSummary ).addEventListener( "click", CloseToc, false );
+	// Event open/close owner info
+	$( config.BownerInfo.id ).addEventListener( "click", OpenOwnerInfo, false );
+	$( config.Bclose.idOwnerInfo ).addEventListener( "click", CloseToc, false );
+	// Event open/close help info
+	$( config.BhelpInfo.id ).addEventListener( "click", OpenHelpInfo, false );
+	$( config.Bclose.idHelpInfo ).addEventListener( "click", CloseToc, false );
+	// Event slide index select
+	$( config.Select.id ).addEventListener( "change",function(){
+		$( config.Bselect.id ).removeAttribute( 'disabled', 'disabled' );
+		$( config.Bselect.id ).focus();
+	},false );
+	$( config.Bselect.id ).addEventListener( "blur",function(){
+			$( config.Select.id ).value = '';
+			$( config.Bselect.id ).setAttribute( 'disabled','disabled' );
+	},false);
+	$( config.Bselect.id ).addEventListener( "click", Fgo, false );
+	// Events open/close and save/reset Configuration 
+	$( config.Bconfig.id ).addEventListener( "click", OpenConfig, false );
+	$( config.Bclose.idConfig ).addEventListener( "click", CloseToc, false );
+	//$( config.Bsubmit.id ).addEventListener( "click", SetConfig, false );
+	$( config.Bsubmit.id ).addEventListener( "click", function( event ){
+		SetConfig();
+		event.preventDefault();
+		window.location.reload();
+	}, false );
+	$( config.Bdefault.id ).addEventListener( "click", ResetConfig, false );
+	// Event print button
+	$( config.Bprint.id).addEventListener( "click", DocPrint, false );
+	// Event general fullscreen button
+	$( config.BfullScreen.id ).addEventListener( "click", function(){
+		screenfull.toggle();
+	}, false );
+//	document.addEventListener(screenfull.raw.fullscreenchange, function () {
+//		toggleFullScreenIcon( screenfull.isFullscreen );
+//	}, false);
+	// Event object fullscreen
+	ObjectFullScreenSetting();
+	 // Trapping focus
+	 if( config.SumModOn.val == 1 || ConfigModOn == 1 ){
+		document.addEventListener( "focus", function( event ) {
+			if ( openDial && !openDial.contains( event.target ) ) {
+				event.stopPropagation();
+				openDial.focus();
+			}
+		}, true);
+	 }
+	 // Event download button
+	 if($( config.Bdownload.idFile ) ){
+		$( config.Bdownload.id ).addEventListener( "click", DownloadDoc, false );
+	}
+	 // Close modals (ESC)
+	document.addEventListener( "keydown", function( event ) {
+		if ( openDial && key( event ) == 27 ) {
+			CloseToc();
+			openDial = null;
+		}
+	}, true );
+	// Listener end flap animation
+	PrefixedEvent( $( config.Flap.id ),"AnimationEnd", function(){ $( config.Flap.id ).removeAttribute( 'class' );} )
+	// Get current slide when reload
+	window.onbeforeunload=function(){
+		try{
+			sessionStorage.setItem( 'Scurrent', current );
+		}
+		catch(e){
+			createCookie( 'Scurrent', current, 0 );
+		}
+	}
+	// Get explicit url (hash) and goto slide
+	// Init (for copy past or link a slide form external ressource)
+	GotoHashSlide();
+	// Listener
+//	window.addEventListener( "hashchange", GotoHashSlide, false);
+	window.onhashchange = GotoHashSlide;
+	// toggle navbar visibility
+	$( config.Nav.id ).addEventListener( "focus", function(){
+		$( config.Nav.id ).classList.remove( config.Nav.classSettingInvisible );
+		$( config.Nav.id ).classList.add( config.Nav.classSettingVisible );
+	}, false);
+	$( config.Nav.id ).addEventListener( "blur", function(){
+		$( config.Nav.id ).classList.remove( config.Nav.classSettingVisible );
+		$( config.Nav.id ).classList.add( config.Nav.classSettingInvisible );
+	}, false);
+	toggleNavBar();
+}
+/** 
+ Begin navigations functions 
+**/
+/* Initialize Slide array */
+function InitTabSlide(){
+	// Get current slide if exists
+	try{
+		current = parseInt( sessionStorage.Scurrent );
+		sessionStorage.clear();
+	}
+	catch( e ){
+		current = parseInt( readCookie( 'Scurrent' ) );
+		eraseCookie( 'Scurrent' );
+	}
+	// Set slide array then display current slide if linear layout shutoff
+	if( !current )current = 0;
+	TabSlide = document.getElementsByClassName( config.Slide.classSetting );
+	if( config.ModePlan.val === 0 ) NoSetTabSlide();
+	$( config.SlideCounter.idCurrent ).firstChild.nodeValue = current + 1;
+	if( config.VocalizeTitle.val === 1 )GetTitre();
+	$( config.SlideCounter.idTotal ).firstChild.nodeValue = TabSlide.length;
+	
+	TabSlide[ current ].className = TabSlide[ current ].className+ " active";
+	
+	if( config.SoundSlide1.val === 1 && current === 0 )$( config.Sdiapo1.id ).play();
+	if( config.UpWindowTitle.val === 1) MajTitreW();
+	if( config.ModePlan.val === 0){
+		$( config.Screen.id ).classList.remove( 'modeplan');
+		// Hide header when first and last slide displaying
+		if( current === 0 || current === TabSlide.length - 1 ) {
+			$( config.Banner.id ).classList.add('is-hidden');
+		}
+		//Animation play
+		wow();
+	}
+	// Set linear layout mode and shutoff global effect
+	else{
+		$( config.Screen.id ).classList.add( 'modeplan');
+		$( config.Screen.id ).setAttribute( 'data-effect', 'noEffect' );
+		SetNSlide();
+	}
+	//Set slide TOC
+	Toc();
+}
+/* Reset slides display*/
+function NoSetTabSlide(){
+	var RefEffect = $( config.Screen.id ).getAttribute( 'data-effect' );
+	for( var i = 0, len = TabSlide.length ;i < len; i++ ){
+		TabSlide[i].classList.remove("active");
+		TabSlide[i].classList.remove("inactive");
+		TabSlide[i].className = TabSlide[i].className+ " inactive";
+		TabSlide[i].classList.remove( config[ RefEffect ].classSetting );
+		TabSlide[i].setAttribute( 'tabindex', '-1' );
+	}
+	$( config.Flap.id ).classList.remove( config[ RefEffect ].classSetting );
+}
+/* Goto next/prev/current slide */
+function GotoNext(){
+	// If not hidden content run
+	if( Tcontrol === 0 ){
+		current += 1;
+		if( current >= TabSlide.length )current -= 1;
+		NoSetTabSlide();
+		if( TabSlide[ current ] ){
+			var HashRef = current + 1;
+			TabSlide[current].classList.remove("active");
+			TabSlide[current].classList.remove("inactive");
+			TabSlide[current].className = TabSlide[current].className+ " active";
+			TabSlide[ current ].setAttribute( 'tabindex', '0');
+			UpdateHashUrl( HashRef);
+		}
+		SetAdaptive();
+		// Hide header on first and last slide
+		if( current === 0 || current === TabSlide.length - 1 ){
+			$( config.Banner.id ).classList.add('is-hidden');
+		}
+		else{
+			if ($( config.Banner.id ).classList.contains('is-hidden')){
+				$( config.Banner.id ).classList.remove('is-hidden');
+			}
+		}
+		wow();
+		$( config.SlideCounter.idCurrent ).firstChild.nodeValue = current+1;
+		//ReScaleSummary();
+		if( config.VocalizeTitle.val === 1)GetTitre();
+		// Initialize hidden content array
+		SetTabTextSlide();
+	}
+	// If hidden content run
+	else{
+		// Display hidden content
+		if( TabTextSlide[ Tcurrent ] ) TabTextSlide[ Tcurrent ].style.visibility = 'visible';
+		//if( config.SoundTxt.val === 1) $( config.Stexte.id ).play();
+		Tcurrent += 1;
+		if( Tcurrent >= TabTextSlide.length ){
+			Tcontrol = 0;
+			Tcurrent = 0;
+			TabTextSlide.length = 0;
+		}
+	}
+	// Toggle navbar visibility and hide next button on last slide
+	if( current === TabSlide.length -1){
+		$(config.Nav.id).classList.remove( config.Nav.classSettingInvisible );
+		$(config.Nav.id).classList.add( config.Nav.classSettingVisible );
+		$( config.Bnext.id ).style.display = 'none';
+	}
+	else{
+		$(config.Nav.id).classList.remove( config.Nav.classSettingVisible );
+		$(config.Nav.id).classList.add( config.Nav.classSettingInvisible );
+		$( config.Bnext.id ).style.display = 'block';
+		$( config.Bprev.id ).style.display = 'block';
+	}
+}
+
+	
+function GotoPrev(){
+	var Cprev = 1;
+	// If not hidden content run
+	if( Tcontrol === 0 ){
+		current -= 1;
+		if( current < 0 ) current = 0;
+		NoSetTabSlide();
+		if( TabSlide[ current ] ){
+			var HashRef = current + 1;
+			TabSlide[current].classList.remove("active");
+			TabSlide[current].classList.remove("inactive");
+			TabSlide[current].className = TabSlide[current].className+ " active";
+			TabSlide[ current ].setAttribute( 'tabindex', '0');
+			UpdateHashUrl( HashRef);
+		}
+		SetAdaptive();
+		// Hide header on first and last slide		
+		if( current === 0 || current === TabSlide.length-1 ){
+			$( config.Banner.id ).classList.add('is-hidden');
+		}
+		else{
+			if ($( config.Banner.id ).classList.contains('is-hidden')){
+				$( config.Banner.id ).classList.remove('is-hidden');
+			}
+		}
+		wow();
+		$( config.SlideCounter.idCurrent ).firstChild.nodeValue = current+1;
+		//ReScaleSummary();
+		if( config.VocalizeTitle.val == 1 )GetTitre();
+		// Initialize hidden content array
+		SetTabTextSlide( Cprev );
+	}
+	else{
+		// Display hidden content
+		TabTextSlide[ Tcurrent ].style.visibility = 'hidden';
+		//if( config.SoundTxt.val === 1 ) $( config.Stexte.id ).play();
+		Tcurrent += 1;
+		if( Tcurrent >= TabTextSlide.length ){
+			Tcontrol = 0;
+			Tcurrent = 0;
+			TabTextSlide.length = 0;
+		}
+	}
+	// Toggle navbar visibility and hide prev button on first slide
+	if( current === 0 ){
+		$(config.Nav.id).classList.remove( config.Nav.classSettingInvisible );
+		$(config.Nav.id).classList.add( config.Nav.classSettingVisible );
+		$( config.Bprev.id ).style.display = 'none';
+	}
+	else{
+		$(config.Nav.id).classList.remove( config.Nav.classSettingVisible );
+		$(config.Nav.id).classList.add( config.Nav.classSettingInvisible );
+		$( config.Bprev.id ).style.display = 'block';
+		$( config.Bnext.id ).style.display = 'block';
+	}
+}
+function GotoSlide( focusRequire ){
+	// If not hidden content run or modal open
+	if( Tcontrol === 0 || TopenDial === 1 ){
+		if( current >= TabSlide.length )current = 0;
+		NoSetTabSlide();
+		if( TabSlide[ current ]){
+			var HashRef = current + 1;
+			TabSlide[current].classList.remove("active");
+			TabSlide[current].classList.remove("inactive");
+			TabSlide[current].className = TabSlide[current].className+ " active";
+			TabSlide[ current ].setAttribute( 'tabindex', '0');
+			UpdateHashUrl( HashRef);
+			if( focusRequire ){
+				TabSlide[ current ].focus();
+			}
+		}
+		SetAdaptive();	
+		// Hide header on first and last slide
+		if( current === 0 || current === TabSlide.length-1 ){
+			$( config.Banner.id ).classList.add('is-hidden');
+		}
+		else{
+			if ($( config.Banner.id ).classList.contains('is-hidden')){
+				$( config.Banner.id ).classList.remove('is-hidden');
+			}
+		}
+		wow();
+		$( config.SlideCounter.idCurrent ).firstChild.nodeValue = current+1;
+		//ReScaleSummary();
+		if( config.VocalizeTitle.val === 1 ) GetTitre();
+		// Initialize hidden content array
+		SetTabTextSlide();
+		TopenDial = null;
+	}
+	else{
+		// Display hidden content
+		TabTextSlide[ Tcurrent ].style.visibility = 'visible';
+		//if( config.SoundTxt.val === 1 )$( config.Stexte.id ).play();
+		Tcurrent += 1;
+		if( Tcurrent >= TabTextSlide.length ){
+			Tcontrol = 0;
+			Tcurrent = 0;
+			TabTextSlide.length = 0;
+		}
+	}
+	// Toggle navbar visibility an show/hide next/prev button when first/last slide
+	if( current === 0 || current === TabSlide.length -1){
+		$(config.Nav.id).classList.remove( config.Nav.classSettingInvisible );
+		$(config.Nav.id).classList.add( config.Nav.classSettingVisible );
+		if( current === 0 ) $( config.Bprev.id ).style.display = 'none';
+		if( current === TabSlide.length -1 ) $( config.Bnext.id ).style.display = 'none';
+	}
+	else{
+		$(config.Nav.id).classList.remove( config.Nav.classSettingVisible );
+		$(config.Nav.id).classList.add( config.Nav.classSettingInvisible );
+		$( config.Bprev.id ).style.display = 'block';
+		$( config.Bnext.id ).style.display = 'block';
+	}
+}
+/* Goto slide from index select */
+function Fgo(){
+	if( parseInt( $( config.TocSelect.id ) .value) > -1 ){
+		current = parseInt( $( config.TocSelect.id ).value);
+		GotoSlide( true );
+		TopenDial = 1;
+	}
+	else{
+		$( config.TocSelect.id ).focus();
+	}
+}
+/* Initiliaze hidden content array */
+function SetTabTextSlide( Cprev ){
+	var target = TabSlide[ current ].querySelectorAll( '*' );
+	var j = 0;
+	for( var i = 0, len = target.length; i < len; i++ ){
+		if( target[i].classList.contains( config.HiddenContent.classSetting )){
+			TabTextSlide[j] = target[i];
+			j++;
+		}
+	}
+	if( TabTextSlide.length > 0 ){
+		Tcontrol = 1;
+			for( var i = 0, len = TabTextSlide.length; i < len; i++ ){
+				Cprev === 1 ? TabTextSlide[i].style.visibility = 'visible' : TabTextSlide[i].style.visibility = 'hidden';
+			}
+		if( Cprev === 1 ) TabTextSlide.reverse();
+	}
+}
+/* Set index select */
+function TocP(){
+	var Toption = document.createElement( 'OPTION' );
+	var Cindex = document.createTextNode( '-' );
+	Toption.setAttribute( 'value', '' );
+	Toption.appendChild( Cindex );
+	document.getElementById( config.TocSelect.id ).appendChild( Toption );
+  	for( var i = 0, len = TabSlide.length; i < len ; i++ ){
+		var Toption = document.createElement( 'OPTION' );
+		var Index = i;
+		var Cindex = document.createTextNode( Index + 1 );
+		Toption.setAttribute( 'value', Index );
+		Toption.appendChild( Cindex );
+		document.getElementById( config.TocSelect.id ).appendChild( Toption );
+	}
+}
+/* Set Summary modal */
+function Toc(){
+	var Txt = {};
+	var Target;
+	var SubSummaryOpen;
+	//set summary wrapper for role document feature
+	var Cdiv = document.createElement( 'div' );
+	Cdiv.setAttribute( 'role', 'document');
+	//Set summary title
+	var Ctitle = document.createElement( 'H1' );
+	Ctitle.setAttribute( 'id', config.Summary.Ctitle );
+	Ctitle.appendChild( document.createTextNode( lang.SummaryTitle ) );
+	var Cbutton = document.createElement( 'BUTTON' ); 
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bclose.idSummary );
+	Ctitle.setAttribute( 'class', config.Ctitle.classSetting );
+	Cbutton.className = config.Bclose.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bclose.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bclose.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Wclose );
+	CspanText.className = config.Bclose.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	Cbutton.appendChild( CspanFallback );
+	Ctitle.appendChild( Cbutton );
+	$( config.Summary.id ).appendChild( Ctitle );
+	//Set summary list
+	var CsummaryList = document.createElement( "UL" );
+	SubSummaryOpen = 0;
+	for( var i = 0; i < TabSlide.length; i++ ){
+		Target = TabSlide[i].querySelector( 'h1,h2' );
+		if( SubSummaryOpen === 1){
+			Cli.appendChild( CSubsummaryList );
+			SubSummaryOpen = 0;
+		}
+		if( Target ){
+			var Cli = document.createElement( "LI" );
+			var Ca = document.createElement ( "A" );
+			Txt = Target.innerText || Target.textContent;
+			var Ctext = document.createTextNode( Txt );
+			Ca.appendChild( Ctext );
+			var hashRef = i+1;
+			Ca.setAttribute( 'href', 'index.html#D' + hashRef );
+			Cli.appendChild( Ca );
+			CsummaryList.appendChild( Cli );
+		}
+		else{
+			Target = TabSlide[i].querySelector( 'h3' );
+			if( Target ){
+				if( SubSummaryOpen === 0 ){
+					var CSubsummaryList = document.createElement( "UL" );
+					SubSummaryOpen = 1;
+				}				
+				var CSli = document.createElement( "LI" );
+				var CSa = document.createElement ( "A" );
+				Txt = Target.innerText || Target.textContent;
+				var CStext = document.createTextNode( Txt );
+				CSa.appendChild( CStext );
+				var hashRef = i+1;
+				CSa.setAttribute( 'href', 'index.html#D' + hashRef );
+				CSli.appendChild( CSa );
+				CSubsummaryList.appendChild( CSli );
+			}
+		}
+		// special case AccessTooltip event
+		if( Ca ){
+			Ca.addEventListener( 'focus', function(){
+				if (this.getAttribute( 'title' ) ){
+					setTooltipNav( this);
+				}
+			}, false);
+			Ca.addEventListener( 'blur', function(){
+				if (this.getAttribute( 'title' ) ){
+					setTooltipNav( this, true);
+				}
+			}, false);
+		}
+		if( CSa ){
+			CSa.addEventListener( 'focus', function(){
+				if (this.getAttribute( 'title' ) ){
+					setTooltipNav( this);
+				}
+			}, false);
+			CSa.addEventListener( 'blur', function(){
+				if (this.getAttribute( 'title' ) ){
+					setTooltipNav( this, true);
+				}
+			}, false);
+		}
+	}
+	Cdiv.appendChild( CsummaryList );
+	$( config.Summary.id ).appendChild( Cdiv );
+}
+/* Set Owner Info */
+function SetOwnerInfo(){
+	//Set owner info title
+	var Ctitle = document.createElement( 'H1' );
+	Ctitle.setAttribute( 'id', config.OwnerInfo.Ctitle );
+	Ctitle.appendChild( document.createTextNode( lang.OwnerInfoTitle ) );
+	Ctitle.setAttribute( 'class', config.Ctitle.classSetting );
+	var Cbutton = document.createElement( 'BUTTON' ); 
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bclose.idOwnerInfo );
+	Cbutton.className = config.Bclose.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bclose.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bclose.fallBackSrcImg;
+
+	var closeCustom = document.getElementById(config.OwnerInfo.id);
+	if(closeCustom.getAttribute('data-close')){
+		Cbutton.setAttribute( 'title', closeCustom.getAttribute('data-close') );
+		CspanText.setAttribute( 'alt', closeCustom.getAttribute('data-close') );
+	}
+	else{
+		Cbutton.setAttribute( 'title', lang.BownerInfo.titleClose );
+		CspanText.setAttribute( 'alt', lang.BownerInfo.altClose );
+	}
+
+	CspanText.className = config.Bclose.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	Cbutton.appendChild( CspanFallback );
+	Ctitle.appendChild( Cbutton );
+	var target = $( config.OwnerInfo.id ).querySelector( 'div' );
+	$( config.OwnerInfo.id ).insertBefore( Ctitle, target );
+	$( config.OwnerInfo.id ).setAttribute( 'aria-labelledby', config.OwnerInfo.Ctitle );
+}
+function SetHelpInfo(){
+	//Set help info title
+	var Ctitle = document.createElement( 'H1' );
+	Ctitle.setAttribute( 'id', config.HelpInfo.Ctitle );
+	Ctitle.appendChild( document.createTextNode( lang.HelpInfoTitle ) );
+	Ctitle.setAttribute( 'class', config.Ctitle.classSetting );
+	var Cbutton = document.createElement( 'BUTTON' ); 
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bclose.idHelpInfo );
+	Cbutton.className = config.Bclose.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bclose.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bclose.fallBackSrcImg;
+
+	var closeCustom = document.getElementById(config.HelpInfo.id);
+	if(closeCustom.getAttribute('data-close')){
+		Cbutton.setAttribute( 'title', closeCustom.getAttribute('data-close') );
+		CspanText.setAttribute( 'alt', closeCustom.getAttribute('data-close') );
+	}
+	else{
+		Cbutton.setAttribute( 'title', lang.BhelpInfo.titleClose );
+		CspanText.setAttribute( 'alt', lang.BhelpInfo.altClose );
+	}
+
+	CspanText.className = config.Bclose.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	Cbutton.appendChild( CspanFallback );
+	Ctitle.appendChild( Cbutton );
+	var target = $( config.HelpInfo.id ).querySelector( 'div' );
+	$( config.HelpInfo.id ).insertBefore( Ctitle, target );
+	$( config.HelpInfo.id ).setAttribute( 'aria-labelledby', config.HelpInfo.Ctitle );
+}
+/* Open summary modal */
+function OpenToc(){
+	var styleSummary = window.getComputedStyle( $( config.Summary.id ) );
+	if( config.SumModOn.val === 1 ){
+		$( config.Summary.id ).setAttribute( 'role', 'dialog' );
+		$( config.Summary.id ).setAttribute( 'aria-labelledby', config.Summary.Ctitle );
+	}
+	else{
+		if( config.ModePlan.val === 0){
+			$( config.Wrapper.id ).style.width = '70%';
+			$( config.Wrapper.id ).style.maxWidth = '1140px';
+			$( config.Wrapper.id ).style.fontSize = '80%';
+			$( config.Wrapper.id ).style.left = '10px';
+		}
+		else{
+		$( config.Wrapper.id ).setAttribute( 'class', config.Wrapper.classSettingLeft );
+		}
+	}
+	if( styleSummary.getPropertyValue('display') === 'block' ){
+		$( config.Summary.id ).style.display = 'none';
+		$( config.Btoc.id ).setAttribute( 'title', lang.Btoc.titleOpen );
+		if( $( config.Btoc.id ).querySelector( 'img' ) ) 
+			$( config.Btoc.id ).querySelector( 'img' ).setAttribute( 'alt', lang.Btoc.altOpen );		
+		openDial = null;
+	}
+	else if( styleSummary.getPropertyValue('display') === 'none' ) {
+		$( config.Summary.id ).style.display = 'block';
+		$( config.Btoc.id ).setAttribute( 'title', lang.Btoc.titleClose );
+		if( $( config.Btoc.id ).querySelector( 'img' ) ) 
+			$( config.Btoc.id ).querySelector( 'img' ).setAttribute( 'alt', lang.Btoc.altClose );
+		$( config.Bclose.idSummary ).focus();
+		openDial = $( config.Summary.id );
+		//ReScaleSummary();
+	}
+}
+/* Open config modal */
+function OpenConfig(){
+	if( $( config.Setting.id ).style.display === 'block') {
+		$( config.Setting.id ).style.display = 'none';
+		$( config.Bconfig.id ).setAttribute( 'title', lang.Bconfig.titleOpen );
+		if( $( config.Bconfig.id ).querySelector( 'img' ) ) 
+			$( config.Bconfig.id ).querySelector( 'img' ).setAttribute( 'alt', lang.Bconfig.altOpen );
+		openDial = null;	
+		$( config.Bconfig.id ).focus();
+	}
+	else if( $( config.Setting.id ).style.display === 'none' ){
+		$( config.Setting.id ).style.display = 'block';
+		$( config.Bconfig.id ).setAttribute( 'title', lang.Bconfig.titleClose );
+		if( $( config.Bconfig.id ).querySelector( 'img' ) ) 
+			$( config.Bconfig.id ).querySelector( 'img' ).setAttribute( 'alt', lang.Bconfig.altClose );
+		openDial = $( config.Setting.id );
+		$( config.Bclose.idConfig ).focus();
+	}
+}
+/* Open owner info */
+function OpenOwnerInfo(){
+	var styleInfo = window.getComputedStyle( $( config.OwnerInfo.id ) );
+	if( styleInfo.getPropertyValue('display') === 'none' ){
+		$( config.OwnerInfo.id ).style.display = 'block';
+		$( config.BownerInfo.id ).setAttribute( 'title', lang.BownerInfo.titleClose );
+		if( $( config.BownerInfo.id ).querySelector( 'img' ) ) 
+			$( config.BownerInfo.id ).querySelector( 'img' ).setAttribute( 'alt', lang.BownerInfo.altClose );
+		$( config.Bclose.idOwnerInfo ).focus();
+		openDial = $( config.OwnerInfo.id );
+	}
+	else if( styleInfo.getPropertyValue('display') === 'block' ){
+		$( config.OwnerInfo.id ).style.display = 'none';
+		$( config.BownerInfo.id ).setAttribute( 'title', lang.BownerInfo.titleOpen );
+		if( $( config.BownerInfo.id ).querySelector( 'img' ) ) 
+			$( config.BownerInfo.id ).querySelector( 'img' ).setAttribute( 'alt', lang.BownerInfo.altOpen);
+			openDial = null;		
+	}
+}
+/* Open help info */
+function OpenHelpInfo(){
+	var styleHelp = window.getComputedStyle( $( config.HelpInfo.id ) );
+	if( styleHelp.getPropertyValue('display') === 'none' ){
+		$( config.HelpInfo.id ).style.display = 'block';
+		$( config.BhelpInfo.id ).setAttribute( 'title', lang.BhelpInfo.titleClose );
+		if( $( config.BhelpInfo.id ).querySelector( 'img' ) ) 
+			$( config.BhelpInfo.id ).querySelector( 'img' ).setAttribute( 'alt', lang.BhelpInfo.altClose );
+		$( config.Bclose.idHelpInfo ).focus();
+		openDial = $( config.HelpInfo.id );
+	}
+	else if( styleHelp.getPropertyValue('display') === 'block' ){
+		$( config.HelpInfo.id ).style.display = 'none';
+		$( config.BhelpInfo.id ).setAttribute( 'title', lang.BhelpInfo.titleOpen );
+		if( $( config.BhelpInfo.id ).querySelector( 'img' ) ) 
+			$( config.BhelpInfo.id ).querySelector( 'img' ).setAttribute( 'alt', lang.BhelpInfo.altOpen );
+		OpenDial = null;
+	}
+}
+/* Close modal */
+function CloseToc(){
+	switch( openDial.getAttribute( 'id' ) ){
+		case config.Summary.id :
+			$( config.Wrapper.id ).removeAttribute( 'style' );
+			$( config.Summary.id ).style.display = 'none';
+			$( config.Btoc.id ).focus();
+			$( config.Nav.id ).classList.remove( 'navbar-invisible' );
+			$( config.Nav.id ).classList.add( 'navbar-visible' );
+			$( config.Btoc.id ).setAttribute( 'title', lang.Btoc.titleOpen );
+			if( $( config.Btoc.id ).querySelector( 'img' ) ) 
+			$( config.Btoc.id ).querySelector( 'img' ).setAttribute( 'alt', lang.Btoc.altOpen );
+			openDial = null;				
+		break
+		case config.Setting.id:
+			$( config.Setting.id ).style.display = 'none';
+			$( config.Bconfig.id ).focus();
+			$( config.Nav.id ).classList.remove( 'navbar-invisible' );
+			$( config.Nav.id ).classList.add( 'navbar-visible' );
+			$( config.Bconfig.id ).setAttribute( 'title', lang.Btoc.titleOpen );
+			if( $( config.Bconfig.id ).querySelector( 'img' ) ) 
+			$( config.Bconfig.id ).querySelector( 'img' ).setAttribute( 'alt', lang.Btoc.altOpen );
+			openDial = null;
+		break;
+		case config.OwnerInfo.id:
+			$( config.OwnerInfo.id ).style.display = 'none';
+			$( config.BownerInfo.id ).focus();
+			$( config.Nav.id ).classList.remove( 'navbar-invisible' );
+			$( config.Nav.id ).classList.add( 'navbar-visible' );
+			$( config.BownerInfo.id ).setAttribute( 'title', lang.BownerInfo.titleOpen );
+			if( $( config.BownerInfo.id ).querySelector( 'img' ) ) 
+				$( config.BownerInfo.id ).querySelector( 'img' ).setAttribute( 'alt', lang.BownerInfo.altOpen );
+			openDial = null;
+		break;
+		case config.HelpInfo.id:
+			$( config.HelpInfo.id ).style.display = 'none';
+			$( config.BhelpInfo.id ).focus();
+			$( config.Nav.id ).classList.remove( 'navbar-invisible' );
+			$( config.Nav.id ).classList.add( 'navbar-visible' );
+			$( config.BhelpInfo.id ).setAttribute( 'title', lang.BhelpInfo.titleOpen );
+			if( $( config.BhelpInfo.id ).querySelector( 'img' ) ) 
+				$( config.BhelpInfo.id ).querySelector( 'img' ).setAttribute( 'alt', lang.BhelpInfo.altOpen );
+			openDial = null;
+		break;
+	}
+	if( config.ModePlan.val === 1 ) $( config.Wrapper.id ).removeAttribute( 'class' );
+	openDial = null;
+}
+/* Rescale summary when first or last slide displaying */
+function ReScaleSummary(){
+	/*
+	if( config.ModePlan.val === 0 ){
+		if( current > 0 && current + 1 < TabSlide.length ){
+			$( config.Summary.id ).style.top = '10%';
+			$( config.Summary.id ).style.height = '85%';
+		}
+		else{
+			$( config.Summary.id ).style.top = '0';
+			$( config.Summary.id ).style.height = '95%';
+		}
+	}
+	else{
+		$( config.Summary.id ).style.top = '0';
+		$( config.Summary.id ).setAttribute('class', config.Summary.classSettingFixed );
+	}
+	*/
+}
+/* Set index slide tag on linear layout mode */
+function SetNSlide(){
+	var ndx;
+	for( var i = 0, len = TabSlide.length; i < len; i++ ){
+		var Ptag = document.createElement( 'P' );
+		var Stag = document.createElement( 'SPAN' );
+		var Txt = document.createTextNode( i + 1 + ' / ' + len );
+		Stag.appendChild( Txt );
+		Ptag.appendChild( Stag );
+		Ptag.setAttribute( 'class', config.LinearIndexTag.classSetting );
+		TabSlide[i].appendChild( Ptag );
+	}
+}
+function setSkipLinkId(){
+	var ndx;
+	for( var i = 0, len = TabSlide.length; i < len; i++ ){
+		ndx = i + 1;
+		TabSlide[i].setAttribute( 'id','D' + ndx );
+		//TabSlide[i].setAttribute( 'tabindex', '-1' );		
+	}
+}
+/* Hash url manager */
+function GotoHashSlide(){
+	var hashRef = parseInt( location.hash.substr(2) );
+	if( config.ModePlan.val === 0 ){
+		current = hashRef - 1;
+		if( current < 0 || !current ) current = 0;
+		Tcontrol = 0;
+		GotoSlide( true );
+		//Close summary if open
+		if( openDial && config.SumModOn.val === 1 ){
+			$( openDial.getAttribute('id') ).style.display = 'none';
+			openDial = null;
+		}
+	}
+	else{
+		var Cid = BaseUrl + '#D' + hashRef;
+		window.location.href = Cid;
+		SetActiveSummaryLink();
+	}
+}
+//Synchronize url, active link and breadcrumb with current slide
+function UpdateHashUrl( ref ){
+	var Cid = BaseUrl + '#D' + ref;
+	if( config.ModePlan.val === 0 ){
+		var stateObj = { currentUrl : Cid };
+		history.pushState(stateObj, '', Cid);
+	}
+	SetActiveSummaryLink();
+	breadcrumb();
+	$( config.SkipLink.id).setAttribute( 'href', Cid );
+
+	var body = document.getElementsByTagName('body')[0];
+	body.setAttribute('data-slide',ref);
+
+}
+//Update active summary link
+function SetActiveSummaryLink(){
+	var summaryList = $( config.Summary.id ).querySelectorAll( 'a' );
+	for( var i = 0, len = summaryList.length; i < len; i++){
+		summaryList[i].classList.remove( config.SummaryLinkActive.classSetting );
+		summaryList[i].removeAttribute( 'title' );
+		var hashRef = location.hash.substr(1);
+		var linkRef = summaryList[i].getAttribute( 'href').split( '#' );
+		var linkText = summaryList[i].innerText || summaryList[i].textContent;
+		if( hashRef == linkRef[1] ){
+			summaryList[i].classList.add( config.SummaryLinkActive.classSetting );
+			summaryList[i].setAttribute( 'title', linkText + lang.SummaryLinkActiveTitle);
+			document.title=linkText;
+		}
+	}
+}
+/* breadcrumb */
+
+function setBreadCrumb(){
+	var headerH2Ref;
+	for( var i = 0, len = TabSlide.length ;i < len; i++ ){
+		var headerH2 = TabSlide[i].querySelector( 'h2' );
+		if( headerH2 ) {
+			headerH2Ref = i;
+		}
+		else{
+			TabSlide[i].setAttribute( 'data-breadcrumb', headerH2Ref );
+		}
+	}
+}
+function breadcrumb(){
+	var target = document.getElementById( config.Breadcrumb.id );
+	var deleted = target.querySelector( 'ul');
+	if( deleted ) target.removeChild( deleted );
+	var headerH2 = TabSlide[current].querySelector( 'h2' );
+	if( !headerH2 ){
+		if( current < TabSlide.length - 1 ){
+			var newBc = document.createElement( 'ul' );
+			var newBcEntry = document.createElement( 'li');
+			var newBcLink = document.createElement( 'a' );
+			var ndxHeader = parseInt( TabSlide[current].getAttribute( 'data-breadcrumb' ) );
+			if( ndxHeader ){
+				var headerH2 = TabSlide[ndxHeader].querySelector( 'h2' );
+				var newBcText = headerH2.innerText || headerH2.textContent;
+				var newBcLinkText = document.createTextNode( newBcText );
+				var newBcNdx = ndxHeader + 1;
+				var newBcHref = BaseUrl + '#D' + newBcNdx;
+				newBcLink.appendChild( newBcLinkText );
+				newBcLink.setAttribute( 'href', newBcHref );
+				newBcEntry.appendChild( newBcLink );
+				newBc.appendChild( newBcEntry );
+				target.appendChild( newBc );
+				var target = document.getElementById( config.Breadcrumb.id ).querySelector( 'ul ');
+				target.classList.remove( 'no-breadcrumb' );
+			}
+		}
+	}
+	var end = TabSlide.length - 1;
+	if( current === 0 || current === TabSlide.length - 1 ){
+		var target = document.getElementById( config.Breadcrumb.id ).querySelector( 'ul ');
+		if( target )target.classList.add( 'no-breadcrumb' );		
+	}
+}
+/* Manage CSS3 effects */
+function wow(){
+	var RefEffect = $( config.Screen.id ).getAttribute( 'data-effect' );
+	if( config[ RefEffect ].flap ){
+		$( config.Flap.id ).classList.add( config[ RefEffect ].classSetting );
+	}
+	else if ( config[ RefEffect ].slide ){
+		TabSlide[ current ].classList.add( config[ RefEffect ].classSetting );	
+	}
+	TabSlide[ current ].style.opacity = '1';		
+}
+/** End navigation functions **/
+/** Begin miscleanous functions **/
+function DocPrint(){
+	window.print();
+}
+function ObjectFullScreenSetting(){
+	var objTarget = document.querySelectorAll( '.'+config.ObjectFullScreen.classSetting );
+	for( var i = 0, len = objTarget.length; i < len; i++ ){
+		objTarget[i].setAttribute( 'tabindex' , '0' );
+		objTarget[i].addEventListener( 'click', function(){
+			screenfull.request( this );
+		}, false);
+	}
+}
+function DownloadDoc(){
+	if($(config.Bdownload.idFile).getAttribute( 'data-url' )){
+		var urlDoc = $( config.Bdownload.idFile ).getAttribute( 'data-url' );
+	}
+	else{
+		var urlDoc = 'download/'+ $( config.Bdownload.idFile ).getAttribute( 'data-filename' ) + '.'+$( config.Bdownload.idFile ).getAttribute( 'data-type' );
+	}
+	window.open( urlDoc );
+}
+function toggleNavBar(){
+	var Target = $(config.Nav.id).querySelectorAll( '*' );
+	for( var i=0, len = Target.length; i < len; i++){
+		Target[i].addEventListener( "focus", function(){
+			$( config.Nav.id ).classList.remove( 'navbar-invisible' );
+			$( config.Nav.id ).classList.add( 'navbar-visible' );
+			// Special Case accessTooltip
+			if (this.getAttribute( 'title' ) ){
+				setTooltipNav( this);
+			}
+		}, false);
+		Target[i].addEventListener( "blur", function(){
+			$( config.Nav.id ).classList.remove( 'navbar-visible' );
+			$( config.Nav.id ).classList.add( 'navbar-invisible' );
+			// Special Case accessTooltip
+			setTooltipNav( this, true );
+		}, false);		
+	}
+}
+function toggleFullScreenIcon( fullscreen ){
+	if( fullscreen ){
+		$(config.BfullScreen.id).setAttribute( 'title', lang.BfullScreen.titleExit );
+		var img = $(config.BfullScreen.id).querySelector( 'img ');
+		if( img ) {
+			img.setAttribute( 'alt', lang.BfullScreen.altExit );
+			img.setAttribute( 'src', config.BfullScreen.fallBackSrcImgExit );
+		}
+		var icon = $(config.BfullScreen.id).querySelector( 'span span');
+		if( icon ){
+			icon.className = config.BfullScreen.iconClassExit;
+		}
+	}
+	else{
+		$(config.BfullScreen.id).setAttribute( 'title', lang.BfullScreen.title );
+		var img = $(config.BfullScreen.id).querySelector( 'img ');
+		if( img ){
+			img.setAttribute( 'alt', lang.BfullScreen.alt );
+			img.setAttribute( 'src', config.BfullScreen.fallBackSrcImg );				
+		}
+		var icon = $(config.BfullScreen.id).querySelector( 'span span' );
+		if( icon ){
+			icon.className = config.BfullScreen.iconClass;
+		}
+	}
+}
+/** End misceleanous functions **/
+/**
+ Begin adaptive functions 
+ **/
+/* Set adaptive sound and window title update */
+function SetAdaptive(){
+	if( config.SoundSlide.val === 1 && current != 0 ) $( config.Sdiapo.id ).play();
+	if( config.SoundSlide1.val === 1 && current === 0) $( config.Sdiapo1.id ).play();
+	if( config.SoundSlideEnd.val === 1 && current === TabSlide.length-1 ) $( config.Sdiapoend.id ).play();
+	if( config.UpWindowTitle.val === 1 ) MajTitreW();	
+}
+/* Set audio compomnents */
+function SetSon( file, Sid ){
+	var Caudio = document.createElement( 'AUDIO' );
+	Caudio.setAttribute( 'id', Sid );
+	var Csource1 = document.createElement( 'SOURCE' );
+	Csource1.setAttribute( 'src', 'sound/' + file + '.mp3' );
+	Csource1.setAttribute( 'type', 'audio/mp3' );
+	var Csource2 = document.createElement( 'SOURCE' );
+	Csource2.setAttribute( 'src', 'sound/' + file + '.ogg' );
+	Csource2.setAttribute( 'type', 'audio/ogg' );
+	Caudio.appendChild( Csource1 );
+	Caudio.appendChild( Csource2 );
+	$( config.Caudio.id ).appendChild( Caudio );
+}
+/* Include Slide title (or aria-label value) in live region */
+function GetTitre(){
+	var target = TabSlide[ current ].childNodes;
+	$( config.LiveSlideTitle.id ).innerHTML = '';
+	if( target[1].tagName === 'H2' ){
+		$( config.LiveSlideTitle.id ).innerHTML = target[1].innerHTML;
+	} 
+	else{
+		var Txt = document.createTextNode( TabSlide[ current ].getAttribute( 'aria-label' ) );
+		$( config.LiveSlideTitle.id ).appendChild( Txt );
+	}
+}
+/* Update window title */
+function MajTitreW(){
+	var target = TabSlide[ current ].querySelector( 'h2' );
+	if( target ){
+		var Title = target.innerText || target.textContent;
+	} 
+	else if( TabSlide[ current ].getAttribute( 'aria-label' ) ){
+		var Title = TabSlide[ current ].getAttribute( 'aria-label' );
+	}
+	if( Title ){
+		document.title = Title + " | " + WTitre;
+	}
+	// get the current breadcrumb content
+	else if( $( 'breadcrumb' ).querySelector( 'a')  ){
+		var Title = $( 'breadcrumb' ).querySelector( 'a').innerHTML;
+				document.title = Title + " | " + WTitre;
+	}
+}
+function SetFontFamily(){
+	if( config.FontDyslexia.val === 1){
+		document.querySelector( 'body').classList.add( config.FontDyslexia.classSettingEffect );
+	}
+	else{
+		document.querySelector( 'body').classList.remove( config.FontDyslexia.classSettingEffect );
+	}
+	//linespace dys
+	if( config.LineSpaceDyslexia.val === 1){
+		document.querySelector( 'body').classList.add( config.LineSpaceDyslexia.classSettingEffect );
+	}
+	else{
+		document.querySelector( 'body').classList.remove( config.LineSpaceDyslexia.classSettingEffect );
+	}
+	//justify dys
+	if( config.NoJustify.val === 1){
+		document.querySelector( 'body').classList.add( config.NoJustify.classSettingEffect );
+	}
+	else{
+		document.querySelector( 'body').classList.remove( config.NoJustify.classSettingEffect );
+	}
+}
+function SetContrast( value ){
+	for ( var param in config){
+		switch( config[ param ].group ) {
+			case 'Gcontrast' :
+				document.querySelector( 'body ').classList.remove( config[ param ].val );
+			break;
+		}
+	}
+	document.querySelector( 'body ').classList.add( value );
+}
+/** End adaptive functions **/
+/**
+ Begin UI components configuration
+**/
+/* Configuration managers */
+function SetConfig(){
+	var TabConfigRef = document.querySelectorAll( '#setting fieldset input, #setting fieldset select' );
+	for ( var i = 0, len = TabConfigRef.length; i < len; i++ ){
+		var ConfigRef = TabConfigRef[i].getAttribute( 'id' );
+		var ValueRef;
+		if( TabConfigRef[i].nodeName === 'INPUT' ){
+			TabConfigRef[i].checked ? ValueRef = 1 : ValueRef = 0;
+			config[ ConfigRef ].val = ValueRef;
+		}
+		if( TabConfigRef[i].nodeName === 'SELECT' ){
+			ValueRef = TabConfigRef[i].value;
+		}
+		try{
+			localStorage.setItem( ConfigRef, ValueRef );
+		}
+		catch(e){
+			createCookie( ConfigRef, ValueRef, 0 );
+		}
+	}
+}
+function ResetConfig(){
+	var TabConfigRef = document.querySelectorAll( '#setting fieldset input, #setting fieldset select' );
+	for ( var i = 0, len = TabConfigRef.length; i < len; i++){
+		var ConfigRef = TabConfigRef[i].getAttribute( 'id' );
+		try{
+			localStorage.removeItem( ConfigRef );
+		}
+		catch(e){
+			eraseCookie( ConfigRef );
+		}
+		if( TabConfigRef[i].nodeName === 'INPUT' ){
+			if( config[ ConfigRef ].val === 1 ) TabConfigRef[i].setAttribute( 'checked', 'checked' );
+		}
+		else if( TabConfigRef[i].nodeName === 'SELECT' ){
+			TabConfigRef[i].value = config.Eno.val;
+		}
+	}
+}
+function GetConfig(){
+	// Get base url for reload the linear layout or slideshow mode
+	var Url = window.location.href;
+	Url.indexOf( '#' ) > 0 ? BaseUrl = BaseUrl=Url.slice( 0, Url.indexOf( '#' ) ) : BaseUrl = Url;
+	$( config.FormConfig.id ).setAttribute( 'action', BaseUrl );
+	// Set configuration parameters and update default checkbox and select value
+	var TabConfigRef = document.querySelectorAll( '#setting fieldset input, #setting fieldset select' );
+	for ( var i = 0; i < TabConfigRef.length; i++ ){
+		var ConfigRef = TabConfigRef[i].getAttribute( 'id' );
+		try{
+			var ValueRef = localStorage.getItem( ConfigRef );
+		}
+		catch(e){
+			var ValueRef = readCookie( ConfigRef );
+		}
+		if( ValueRef ){
+			if( TabConfigRef[i].nodeName === 'INPUT' ){
+				if( parseInt( ValueRef ) === 1) TabConfigRef[i].setAttribute( 'checked', 'checked' ); 		
+				config[ ConfigRef ].val = parseInt( ValueRef );
+			}
+			else if( TabConfigRef[i].nodeName === 'SELECT' ){
+				// update #wrapper data-effect
+				if( TabConfigRef[i].getAttribute( 'id' ) === 'Effects' ){
+					$( config.Screen.id ).setAttribute( 'data-effect', ValueRef );
+				}
+				// update contrast mode
+				if( TabConfigRef[i].getAttribute( 'id' ) === config.Contrast.id ){
+					SetContrast( ValueRef );
+				}							
+			}
+		}
+		if( TabConfigRef[i].nodeName === 'INPUT' ){	
+			if( config[ ConfigRef ].val > 0 ) TabConfigRef[i].setAttribute( 'checked', 'checked' );
+		}
+		else if( TabConfigRef[i].nodeName === 'SELECT' ){
+				TabConfigRef[i].value = ValueRef;
+		}			
+	}
+}
+/* Configuration window */
+function PushConfig(){
+	// Set window title and close button
+	var Ctitle = document.createElement( 'H1' );
+	Ctitle.appendChild(document.createTextNode( lang.ConfigTitle ) );
+	Ctitle.setAttribute( 'id', config.Setting.Ctitle );
+	Ctitle.setAttribute( 'class', config.Ctitle.classSetting );	
+	$( config.Setting.id ).setAttribute( 'aria-labelledby', config.Setting.Ctitle );
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bclose.idConfig );
+	Cbutton.className = config.Bclose.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bclose.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bclose.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Wclose );
+	CspanText.className = config.Bclose.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	Cbutton.appendChild( CspanFallback );
+	// Set window title and close button
+	Ctitle.appendChild(Cbutton);
+	$( config.Setting.id ).appendChild(Ctitle);
+	// Set the form
+	var Cform = document.createElement('FORM');
+	Cform.setAttribute( 'id', config.FormConfig.id );
+	Cform.setAttribute( 'action', '' );
+	// Set components
+	/* Accessibility */
+	//Dyslexia
+	var Cfieldset0 = document.createElement( 'FIELDSET' );
+	var Clegend = document.createElement( 'LEGEND' );
+	Clegend.appendChild( document.createTextNode( lang.Gdys.legend ) );
+	Cfieldset0.appendChild( Clegend );
+	//Constrast
+	var Cfieldset5 = document.createElement( 'FIELDSET' );
+	var Clegend = document.createElement( 'LEGEND' );
+	Clegend.appendChild( document.createTextNode( lang.Contrast.legend ) );
+	Cfieldset5.appendChild( Clegend );
+	
+	var Ccustomselect=document.createElement( 'span' );
+	Ccustomselect.setAttribute( 'class', 'custom-select' );
+	
+	var CselectContrast=document.createElement( 'SELECT' );
+	CselectContrast.setAttribute( 'id', config.Contrast.id );
+	Ccustomselect.appendChild( CselectContrast );	
+	
+	var Clabel = document.createElement( 'label' );
+	Clabel.setAttribute( 'for', config.Contrast.id );
+	Clabel.appendChild( document.createTextNode( lang.Contrast.label ) );
+	Cfieldset5.appendChild( Clabel );
+//	Cfieldset5.appendChild( document.createElement( 'BR' ) );
+	Cfieldset5.appendChild( Ccustomselect );
+//	Cfieldset5.appendChild( document.createElement( 'BR' ) );
+	//Accessibility
+	var Cfieldset1 = document.createElement( 'FIELDSET' );
+	var Clegend = document.createElement( 'LEGEND' );
+	Clegend.appendChild( document.createTextNode( lang.Gaccess.legend ) );
+	Cfieldset1.appendChild( Clegend );
+	// Slide
+	var Cfieldset2 = document.createElement( 'FIELDSET' );
+	var Clegend = document.createElement( 'LEGEND' );
+	Clegend.appendChild( document.createTextNode( lang.Gslide.legend ) );
+	Cfieldset2.appendChild( Clegend );
+	// Effects as a dropdown box
+	var Cfieldset3 = document.createElement( 'FIELDSET' );
+	var Clegend = document.createElement( 'LEGEND' );
+	Clegend.appendChild( document.createTextNode( lang.Geffects.legend ) );
+	Cfieldset3.appendChild( Clegend );
+	var Cselect=document.createElement( 'SELECT' );
+	Cselect.setAttribute( 'id', 'Effects' );
+	var Clabel = document.createElement( 'label' );
+	Clabel.setAttribute( 'for', 'Effects' );
+	Clabel.appendChild( document.createTextNode( lang.LabelEffect ) );
+	Cfieldset3.appendChild( Clabel );
+//	Cfieldset3.appendChild( document.createElement( 'BR' ) );
+	Cfieldset3.appendChild( Cselect );
+//	Cfieldset3.appendChild( document.createElement( 'BR' ) );
+	// Set configuration form and help elements
+	for ( var param in config){
+		switch( config[ param ].group ) {
+			case 'Gdys' :
+				if( config[ param ].useIt ){
+					var Cinput = document.createElement( 'INPUT' );
+					Cinput.setAttribute( 'id', config[ param ].id );
+					Cinput.setAttribute( 'aria-describedby', 'help-' + config[ param ].id );
+					Cinput.setAttribute( 'type', 'checkbox' );
+					Cinput.className = config[ param ].classSetting;				
+					var Clabel = document.createElement( 'LABEL' );
+					Clabel.setAttribute( 'for', config[ param ].id );
+					Clabel.className = config[ param].classLabelSetting;
+					var IconSpan = document.createElement( 'SPAN' );
+					IconSpan.setAttribute( 'aria-hidden', 'true' );
+					IconSpan.className = config[ param ].IconClass;
+					Clabel.appendChild( IconSpan );
+					Clabel.appendChild( document.createTextNode( lang[ param ].label ) );
+					var Cphelp = document.createElement( 'P' );
+					Cphelp.setAttribute( 'id', 'help-' + config[ param ].id );
+					Cphelp.setAttribute( 'class', config[ param ].classHelpSetting );
+					Cphelp.appendChild( document.createTextNode( lang[ param ].help ) );
+					// Set the form control
+					Cfieldset0.appendChild( Cinput );
+					Cfieldset0.appendChild( Cphelp );
+					Cfieldset0.appendChild( Clabel );
+//					Cfieldset0.appendChild( document.createElement( 'BR' ) );
+				}
+			break;
+			case 'Gaccess' :
+				if( config[ param ].useIt ){
+					var Cinput = document.createElement( 'INPUT' );
+					Cinput.setAttribute( 'id', config[ param ].id );
+					Cinput.setAttribute( 'aria-describedby', 'help-' + config[ param ].id );
+					Cinput.setAttribute( 'type', 'checkbox' );
+					Cinput.className = config[ param ].classSetting;				
+					var Clabel = document.createElement( 'LABEL' );
+					Clabel.setAttribute( 'for', config[ param ].id );
+					Clabel.className = config[ param].classLabelSetting;
+					var IconSpan = document.createElement( 'SPAN' );
+					IconSpan.setAttribute( 'aria-hidden', 'true' );
+					IconSpan.className = config[ param ].IconClass;
+					Clabel.appendChild( IconSpan );
+					Clabel.appendChild( document.createTextNode( lang[ param ].label ) );
+					var Cphelp = document.createElement( 'P' );
+					Cphelp.setAttribute( 'id', 'help-' + config[ param ].id );
+					Cphelp.setAttribute( 'class', config[ param ].classHelpSetting );
+					Cphelp.appendChild( document.createTextNode( lang[ param ].help ) );
+					// Set the form control
+					Cfieldset1.appendChild( Cinput );
+					Cfieldset1.appendChild( Cphelp );
+					Cfieldset1.appendChild( Clabel );
+//					Cfieldset1.appendChild( document.createElement( 'BR' ) );
+				}
+			break;
+			case 'Gslide' :
+				if( config[ param ].useIt ){
+					var Cinput = document.createElement( 'INPUT' );
+					Cinput.setAttribute( 'id', config[ param ].id );
+					Cinput.setAttribute( 'aria-describedby', 'help-' + config[ param ].id );
+					Cinput.setAttribute( 'type', 'checkbox' );
+					Cinput.className = config[ param ].classSetting;				
+					var Clabel = document.createElement( 'LABEL' );
+					Clabel.setAttribute( 'for', config[ param ].id );
+					Clabel.className = config[ param].classLabelSetting;
+					var IconSpan = document.createElement( 'SPAN' );
+					IconSpan.setAttribute( 'aria-hidden', 'true' );
+					IconSpan.className = config[ param ].IconClass;
+					Clabel.appendChild( IconSpan );
+					Clabel.appendChild( document.createTextNode( lang[ param ].label ) );
+					var Cphelp = document.createElement( 'P' );
+					Cphelp.setAttribute( 'id', 'help-' + config[ param ].id );
+					Cphelp.setAttribute( 'class', config[ param ].classHelpSetting );
+					Cphelp.appendChild( document.createTextNode( lang[ param ].help ) );
+					// Set the form control
+					Cfieldset2.appendChild( Cinput );
+					Cfieldset2.appendChild( Cphelp );
+					Cfieldset2.appendChild( Clabel );
+//					Cfieldset2.appendChild( document.createElement( 'BR' ) );
+				}
+			break;
+			// Special case : dropdown effects
+			case 'Geffects' :
+				if( config[ param ].useIt ){
+					var Coption = document.createElement( 'OPTION' );
+					Coption.setAttribute( 'value', config[ param ].val );
+					Coption.appendChild( document.createTextNode( lang[ param ].help ) );
+					// Set the form control
+					Cselect.appendChild( Coption );
+				}
+			break;
+			//Special case : dropdown contrast
+			case 'Gcontrast' :
+				var Coption = document.createElement( 'OPTION' );
+				Coption.setAttribute( 'value', config[ param ].val );
+				Coption.appendChild( document.createTextNode( lang[ param ].help ) );
+				// Set the form control
+				CselectContrast.appendChild( Coption );
+			break;			
+		}
+	}
+	// Append components
+	Cform.appendChild( Cfieldset0 );
+	Cform.appendChild( Cfieldset5 );
+	Cform.appendChild( Cfieldset1 );
+	Cform.appendChild( Cfieldset2 );
+	//Cform.appendChild( Cfieldset3 );
+	// Set controls button
+	var Sdiv = document.createElement( 'DIV' );
+	Sdiv.setAttribute( 'id', config.ConfigButton.id );	
+	Sdiv.setAttribute( 'class', config.ConfigButton.classSetting );	
+	var SButton = document.createElement( 'INPUT' );
+	SButton.setAttribute( 'id', config.Bsubmit.id );
+	SButton.setAttribute( 'class', config.Bsubmit.classSetting );
+	SButton.setAttribute( 'type', 'submit' );
+	SButton.setAttribute( 'title', lang.Bsubmit.title );
+	SButton.setAttribute( 'value', lang.Bsubmit.value );
+	Sdiv.appendChild( SButton );
+	var SButton = document.createElement( 'INPUT' );
+	SButton.setAttribute( 'id', config.Bdefault.id );
+	SButton.setAttribute( 'class', config.Bdefault.classSetting );
+	SButton.setAttribute( 'type', 'submit' );
+	SButton.setAttribute( 'title', lang.Bdefault.title );
+	SButton.setAttribute( 'value', lang.Bdefault.value );
+	Sdiv.appendChild( SButton );
+	Cform.appendChild( Sdiv );
+	// Then set in window
+	$( config.Setting.id ).appendChild( Cform );
+}
+/* Set the navbar */
+function PushNavBar(){
+	var Clist = document.createElement( 'UL' );
+	Clist.setAttribute( 'id', config.NavBar.id );
+	// Help info
+	var Cli = document.createElement( 'LI' );
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.BhelpInfo.id );
+	Cbutton.setAttribute( 'title', lang.BhelpInfo.titleOpen );
+	Cbutton.className = config.BhelpInfo.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.BhelpInfo.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.BhelpInfo.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.BhelpInfo.altOpen );
+	CspanText.className = config.BhelpInfo.fallbackClass;
+
+	var CspanSmText = document.createElement( 'IMG' );
+	CspanSmText.src = config.BhelpInfo.fallBackSmSrcImg;
+	CspanSmText.setAttribute( 'alt', '' );
+	CspanSmText.className = config.BhelpInfo.fallbackSmClass;
+		
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );
+	CspanFallback.appendChild( CspanSmText );
+	Cbutton.appendChild( CspanFallback );
+
+	var CspanRwd = document.createElement( 'span' );	
+	CspanRwd.setAttribute( 'class', 'small-only' );
+	var CspanRwdText = document.createTextNode('Aide');
+	CspanRwd.appendChild(CspanRwdText);
+	Cbutton.appendChild(CspanRwd);	
+	
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	// Owner info
+	var Cli = document.createElement( 'LI' );
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.BownerInfo.id );
+	Cbutton.setAttribute( 'title', lang.BownerInfo.titleOpen );
+	Cbutton.className = config.BownerInfo.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.BownerInfo.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.BownerInfo.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.BownerInfo.altOpen);
+	CspanText.className = config.BownerInfo.fallbackClass;
+
+	var CspanSmText = document.createElement( 'IMG' );
+	CspanSmText.src = config.BownerInfo.fallBackSmSrcImg;
+	CspanSmText.setAttribute( 'alt', '' );
+	CspanSmText.className = config.BownerInfo.fallbackSmClass;
+		
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );
+	CspanFallback.appendChild( CspanSmText );
+	Cbutton.appendChild( CspanFallback );
+
+	var CspanRwd = document.createElement( 'span' );	
+	CspanRwd.setAttribute( 'class', 'small-only' );
+	var CspanRwdText = document.createTextNode('Informations éditeur');
+	CspanRwd.appendChild(CspanRwdText);
+	Cbutton.appendChild(CspanRwd);
+
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	// Document download
+	if( $( config.Bdownload.idFile )){
+		var Cli = document.createElement( 'LI' );
+		Cli.className = 'small-invisible';
+		var Cbutton = document.createElement( 'BUTTON' );
+		var DataFile = $( config.Bdownload.idFile );
+		var DocumentMetadata = DataFile.getAttribute( 'data-name' ) + ' (' + DataFile.getAttribute( 'data-type') + ', ' + DataFile.getAttribute( 'data-weight' ) + ' ' + DataFile.getAttribute( 'data-lang') + ' - ' + lang.Bdownload.newWindow+')';
+		Cbutton.setAttribute( 'type', 'button' );
+		Cbutton.setAttribute( 'id', config.Bdownload.id );
+		Cbutton.setAttribute( 'title', lang.Bdownload.title + ' ' +DocumentMetadata );
+		Cbutton.className = config.BhelpInfo.classSetting;
+		//Icon implementation
+		var CspanFallback = document.createElement( 'SPAN' );
+		CspanFallback.className = config.IconFallBack.classSetting;
+		var CspanIcon = document.createElement( 'SPAN' );
+		CspanIcon.className = config.Bdownload.iconClass;
+		CspanIcon.setAttribute( 'aria-hidden', 'true' );
+		var CspanText = document.createElement( 'IMG' );
+		CspanText.src = config.Bdownload.fallBackSrcImg;
+		CspanText.setAttribute( 'alt', lang.Bdownload.alt + ' ' + DocumentMetadata );
+		CspanText.className = config.BhelpInfo.fallbackClass;
+		CspanFallback.appendChild( CspanIcon );
+		CspanFallback.appendChild( CspanText );
+		Cbutton.appendChild( CspanFallback );
+		Cli.appendChild( Cbutton );
+		Clist.appendChild( Cli );
+	}
+	// Print
+	var Cli = document.createElement( 'LI' );
+	Cli.className = 'small-invisible';
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bprint.id );
+	Cbutton.setAttribute( 'title', lang.Bprint.title );
+	Cbutton.className = config.Bprint.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bprint.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bprint.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Bprint.title);
+	CspanText.className = config.Bprint.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );
+	Cbutton.appendChild( CspanFallback );
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	// FullScreen
+	var Cli = document.createElement( 'LI' );
+//	Cli.className = 'small-invisible';
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.BfullScreen.id );
+	Cbutton.setAttribute( 'title', lang.BfullScreen.title );
+	Cbutton.className = config.BfullScreen.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.BfullScreen.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.BfullScreen.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.BfullScreen.alt);
+	CspanText.className = config.BfullScreen.fallbackClass;
+
+	var CspanSmText = document.createElement( 'IMG' );
+	CspanSmText.src = config.BfullScreen.fallBackSmSrcImg;
+	CspanSmText.setAttribute( 'alt', '' );
+	CspanSmText.className = config.BfullScreen.fallbackSmClass;
+		
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );
+	CspanFallback.appendChild( CspanSmText );
+	Cbutton.appendChild( CspanFallback );
+	
+	var CspanRwd = document.createElement( 'span' );	
+	CspanRwd.setAttribute( 'class', 'small-only' );
+	var CspanRwdText = document.createTextNode('Plein écran');
+	CspanRwd.appendChild(CspanRwdText);
+	Cbutton.appendChild(CspanRwd);
+	
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	// Configuration
+	var Cli = document.createElement( 'LI' );
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bconfig.id );
+	Cbutton.setAttribute( 'title', lang.Bconfig.titleOpen );
+	Cbutton.className = config.Bconfig.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bconfig.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bconfig.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Bconfig.altOpen);
+	CspanText.className = config.Bconfig.fallbackClass;
+
+	var CspanSmText = document.createElement( 'IMG' );
+	CspanSmText.src = config.Bconfig.fallBackSmSrcImg;
+	CspanSmText.setAttribute( 'alt', '' );
+	CspanSmText.className = config.Bconfig.fallbackSmClass;
+	
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );
+	CspanFallback.appendChild( CspanSmText );
+	Cbutton.appendChild( CspanFallback );
+
+	var CspanRwd = document.createElement( 'span' );	
+	CspanRwd.setAttribute( 'class', 'small-only' );
+	var CspanRwdText = document.createTextNode('Configuration');
+	CspanRwd.appendChild(CspanRwdText);
+	Cbutton.appendChild(CspanRwd);	
+	
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	// Select + button
+	var Cli = document.createElement( 'LI' );
+	var Cdiv = document.createElement( 'DIV' );
+	Cdiv.setAttribute( 'id', config.SelectWrapper.id );
+	Cdiv.className = config.SelectWrapper.classSetting;
+
+	var Ccustomselect=document.createElement( 'span' );
+	Ccustomselect.setAttribute( 'class', 'custom-select' )
+
+	var Cselect = document.createElement( 'SELECT' );
+	Cselect.setAttribute( 'id', config.Select.id );
+	Cselect.setAttribute( 'title',lang.Select.title );
+	Cselect.className = config.Select.classSetting;
+
+	Ccustomselect.appendChild( Cselect );	
+	Cdiv.appendChild( Ccustomselect );
+
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type','button' );
+	Cbutton.setAttribute( 'id', config.Bselect.id );
+	Cbutton.setAttribute( 'title', lang.Bselect.title );
+	Cbutton.className = config.Bselect.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bselect.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bselect.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Bselect.title);
+	CspanText.className = config.Bselect.fallbackClass;
+
+
+	var CspanSmText = document.createElement( 'IMG' );
+	CspanSmText.src = config.Bselect.fallBackSmSrcImg;
+	CspanSmText.setAttribute( 'alt', '' );
+	CspanSmText.className = config.Bselect.fallbackSmClass;
+		
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	CspanFallback.appendChild( CspanSmText );	
+	Cbutton.appendChild( CspanFallback );
+	
+	var CspanRwd = document.createElement( 'span' );	
+	CspanRwd.setAttribute( 'class', 'small-only' );
+	var CspanRwdText = document.createTextNode(lang.Bselect.title);
+	CspanRwd.appendChild(CspanRwdText);
+	Cbutton.appendChild(CspanRwd);
+	
+	Cdiv.appendChild( Cbutton );
+	Cli.appendChild( Cdiv );
+	Clist.appendChild( Cli );
+	// Summary
+	var CliSumm = document.createElement( 'NAV' );
+	CliSumm.setAttribute('role','navigation');
+	CliSumm.setAttribute('id','summary-container');
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Btoc.id );
+	Cbutton.setAttribute( 'title', lang.Btoc.titleOpen );
+	Cbutton.className = config.Btoc.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Btoc.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Btoc.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Btoc.altOpen );
+	CspanText.className = config.Btoc.fallbackClass;
+
+	var CspanSmText = document.createElement( 'IMG' );
+	CspanSmText.src = config.Btoc.fallBackSmSrcImg;
+	CspanSmText.setAttribute( 'alt', '' );
+	CspanSmText.className = config.Btoc.fallbackSmClass;
+
+	var CspanRwd = document.createElement( 'span' );	
+	CspanRwd.setAttribute( 'class', 'small-only' );
+	var CspanRwdText = document.createTextNode('sommaire');
+	CspanRwd.appendChild(CspanRwdText);
+	
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	CspanFallback.appendChild( CspanSmText );	
+	Cbutton.appendChild( CspanFallback );
+	Cbutton.appendChild( CspanRwd );
+	CliSumm.appendChild( Cbutton );
+	//Clist.appendChild( Cli );
+	// Index
+	var CliIndex = document.createElement( 'DIV' );
+	CliIndex.setAttribute( 'id', config.SlideCounter.id );
+	CliIndex.className = config.SlideCounter.classSetting;
+	var Cdiv = document.createElement( 'DIV' );
+	var Cspan = document.createElement( 'SPAN' );
+	Cspan.appendChild(document.createTextNode( '1' ));
+	Cspan.setAttribute( 'id', config.SlideCounter.idCurrent );
+	Cspan.className = config.SlideCounter.currentClass;
+	Cdiv.appendChild( Cspan );
+	var Cspan = document.createElement( 'SPAN' );
+	Cspan.appendChild( document.createTextNode( lang.Ndxon ) );
+	Cspan.className = config.SlideCounter.isHiddenClass;
+	Cdiv.appendChild( Cspan );
+	var Cspan = document.createElement( 'SPAN' );
+	Cspan.setAttribute( 'id', config.SlideCounter.idTotal );
+	Cspan.appendChild( document.createTextNode( '999' ) );
+	Cspan.className = config.SlideCounter.totalClass;
+	Cdiv.appendChild( Cspan );
+	CliIndex.appendChild( Cdiv );
+	//Clist.appendChild( Cli );
+	// Include the navbar
+	$( config.WrapperNav.id ).appendChild( Clist );
+	$( config.WrapperNav.id ).appendChild( CliSumm );
+	$( config.Wrapper.id ).appendChild( CliIndex );
+}
+//Set prev and next buttons
+function PushPrevNext(){
+	var Target = $( config.PrevNext.id );
+	var Clist = document.createElement( 'UL' );
+	// Prev button
+	var Cli = document.createElement( 'LI' );
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bprev.id );
+	Cbutton.setAttribute( 'title', lang.Bprev.title );
+	Cbutton.className = config.Bprev.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bprev.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bprev.fallBackSrcImg;
+	CspanText.setAttribute( 'alt', lang.Bprev.title );
+	CspanText.className = config.Bprev.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	Cbutton.appendChild( CspanFallback );
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	// Next
+	var Cli = document.createElement( 'LI' );
+	var Cbutton = document.createElement( 'BUTTON' );
+	Cbutton.setAttribute( 'type', 'button' );
+	Cbutton.setAttribute( 'id', config.Bnext.id );
+	Cbutton.setAttribute( 'title', lang.Bnext.title );
+	Cbutton.className = config.Bnext.classSetting;
+	//Icon implementation
+	var CspanFallback = document.createElement( 'SPAN' );
+	CspanFallback.className = config.IconFallBack.classSetting;
+	var CspanIcon = document.createElement( 'SPAN' );
+	CspanIcon.className = config.Bnext.iconClass;
+	CspanIcon.setAttribute( 'aria-hidden', 'true' );
+	var CspanText = document.createElement( 'IMG' );
+	CspanText.src = config.Bnext.fallBackSrcImg;
+	CspanText.setAttribute ( 'alt', lang.Bnext.title );
+	CspanText.className = config.Bnext.fallbackClass;
+	CspanFallback.appendChild( CspanIcon );
+	CspanFallback.appendChild( CspanText );	
+	Cbutton.appendChild( CspanFallback );
+	Cli.appendChild( Cbutton );
+	Clist.appendChild( Cli );
+	Target.appendChild( Clist );
+}
+/** End UI components configuration **/
+/**
+ Begin utilities
+**/
+/* *** AccessTooltip dependencies *** */
+	/* set displaying delay */
+	var timeoutID;	
+	function setTooltipNav( obj, reset, mouse ){
+		var divTooltip = $( 'AccessibleTooltip' );
+		var options = {
+			tooltipClassName : 'access-tooltip',
+			toolTipBetween : 5,
+			toolTipUp : true,
+			mouse : false,
+			tempDelay : 4000,
+			useAriaDP : false,
+			useEscClose : true
+		}
+		if( reset ){
+			clearTooltip ( obj, mouse );
+		}
+		else if( obj.getAttribute( 'title' ) ){
+			var txt = obj.getAttribute( 'title' );
+			var txtTooltip = document.createTextNode( txt );
+			//Set tooltip
+			if( txt != '' ){
+				if( mouse )obj.removeAttribute('title');
+				//position
+				var posRight = divTooltip.offsetLeft + divTooltip.offsetWidth;
+				var resetPosRight = 0;
+				var windowWidth=document.body.clientWidth;
+				var windowHeight=document.body.clientHeight;
+				if( posRight > windowWidth ) resetPosRight = posRight - windowWidth;
+				var setPos = options.toolTipBetween + obj.offsetHeight;
+				var toolTipTop = position( obj, 'y' ) + setPos;
+				if( options.toolTipUp) toolTipTop = position( obj, 'y' ) - setPos - 5;
+				divTooltip.style.top = toolTipTop + 'px';
+				divTooltip.style.left = position( obj, 'x' ) + obj.offsetWidth * 25/100 - resetPosRight + 'px';
+				divTooltip.style.display = 'block';
+				if( divTooltip.firstChild ) divTooltip.removeChild( divTooltip.firstChild );
+				divTooltip.appendChild( txtTooltip );
+				if( options.tempDelay > 0){
+					timeoutID = setTimeout( function(){
+						if( divTooltip.firstChild ) {
+							if( mouse ) obj.setAttribute('title', divTooltip.firstChild.nodeValue);
+							divTooltip.removeChild( divTooltip.firstChild );
+							divTooltip.style.display = 'none';
+						}
+					}, options.tempDelay);
+				}
+				if( options.useAriaDP || options.useEscClose ) {
+					document.addEventListener( 'keydown', escClose, false );
+				}
+			}
+			else{
+				obj.removeAttribute( 'title' );
+			}
+		}
+	}
+	function escClose( event ){
+		var divTooltip = $( 'AccessibleTooltip' );
+		if( event.keyCode === 27 ){
+			if( divTooltip.firstChild ) {
+				divTooltip.removeChild( divTooltip.firstChild );
+				divTooltip.style.display = 'none';
+			}
+			document.removeEventListener( 'keydown', escClose , false );
+		}
+	}
+	function clearTooltip ( obj, mouse ){
+		var divTooltip = $( 'AccessibleTooltip' );
+		if( divTooltip.firstChild ) {
+			if( mouse )obj.setAttribute('title', divTooltip.firstChild.nodeValue);
+			divTooltip.removeChild( divTooltip.firstChild );
+			divTooltip.style.display = 'none';
+		}
+		clearTimeout(timeoutID); 
+	}
+	// obj position
+	function position( obj, coordinate){
+		var pos, parent = obj.offsetParent;
+		(coordinate === 'x') ? pos = obj.offsetLeft : pos = obj.offsetTop;
+		while( parent != null){
+			(coordinate === 'x') ? pos += parent.offsetLeft : pos += parent.offsetTop;
+			parent = parent.offsetParent;
+		}
+		return pos;
+	}
+	// IE11 on windows 8 is the only browser wich expose the title on keyboard focus
+	// Below a little trash, but sufficient, IE11/windows 8 filtering method
+	// filter is based on the new user agent string for IE11+
+	function Unsupported(){
+		var objUA = window.navigator.userAgent;
+		//If IE 11
+		if( objUA.indexOf('Trident') > 0 && objUA.indexOf('MSIE') < 0 ){
+			//If windows 7 then title keyboard focus is unsupported
+			if(objUA.indexOf('NT 6.1') > 0){
+				return true;
+			}
+			//If windows 8+ title keyboard focus is supported
+			else {
+			 return false;
+			}
+		}
+		//If not IE title keyboard focus is unsupported
+		else {
+		return true;
+		}
+	}
+/* CSS 3 prefix manager (http://www.sitepoint.com/css3-animation-javascript-event-handlers/) */
+function PrefixedEvent( anim, type, callback ) {
+	for ( var p = 0; p < pfx.length; p++ ) {
+		if ( !pfx[p] ) type = type.toLowerCase();
+		anim.addEventListener( pfx[p] + type, callback, false);
+	}
+}
+/* Shortcut to get element by e=id/tagname/classname and ndx=index (for tagname and classname case) */
+function $( e, ndx ){
+ var x;
+ var elm;
+ ndx ? x = ndx : x = 0;
+ if( document.getElementById(e) ) elm = document.getElementById(e);
+ if( document.getElementsByClassName(e)[x] ) elm = document.getElementsByClassName(e)[x];
+ if( document.getElementsByTagName(e)[x] ) elm = document.getElementsByTagName(e)[x];
+ return elm;
+}
+/* Get KeyCode */
+// TAB:9, ESC:27, Left:37, Up:38, Right:39, Down:40, Spacebar:32, Enter:13
+// pageDown:34, pageUp:33 (for remote control), Home:36, End:35
+function key( event ){
+	var Keyref;
+	 var KeycodeTab = [9,13,27,32,33,34,35,36,37,38,39,40,48];
+	 if( KeycodeTab.indexOf( event.keyCode ) > -1 ){
+		Keyref = event.keyCode;
+		if( event.altKey ){
+			Keyref = '2' + event.keyCode;
+		}
+		else if( event.shiftKey ){
+			Keyref = '1' + event.keyCode;
+		}
+	  return Keyref;
+	 }
+}
+/* Cookies */
+function createCookie( name, value, days ) {
+	if ( days ) {
+		var datetime = new Date();
+		datetime.setTime( datetime.getTime() + ( days * 24 * 60 * 60 * 1000 ) );
+		var expires = "; expires=" + datetime.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name + "=" + value + expires + "; path=/";
+}
+function readCookie( name ) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split( ';' );
+	for(var i = 0; i < ca.length; i++ ) {
+		var c = ca[i];
+		while ( c.charAt(0) == ' ' ) c = c.substring( 1, c.length );
+		if ( c.indexOf( nameEQ ) == 0 ) return c.substring( nameEQ.length, c.length );
+	}
+	return null;
+}
+function eraseCookie( name ) {
+	createCookie( name , "", -1 );
+}
+})();
+
+// @license-end
