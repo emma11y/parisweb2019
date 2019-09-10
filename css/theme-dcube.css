@@ -770,45 +770,45 @@ b[class*="dcube-bgcolor-"] {
 
 /* c4 : bleu ciel */
 
-.dcube-bgcolor-c4 {
+/*.dcube-bgcolor-c4 {
   background-color: #008dc4;
   color: #fff;
 }
 
 .high-c .dcube-bgcolor-c4 .dcube-color-c5 {
   color: inherit;
-}
+}*/
 
-/* c4 : bleu thème dcube */
+/* c4a : bleu thème dcube */
 
 .dcube-bgcolor-c4a {
   background-color: #171745;
-  color: #008dc4;
+  color: #00b2f8;
 }
 
 .dcube-bgcolor-c4a.slide .reference-rgaa:not([class*="dcube-bgcolor-c"]) {
-  background-color: #008dc4;
+  background-color: #171745;
   color: inherit;
 }
 
 .dcube-bgcolor-c4a .dcube-text-highlight {
-  background-color: #f9fcff;
+  background-color: #fff;
 }
 
 .dcube-bgcolor-c4a kbd,
 .dcube-bgcolor-c4a code,
 .dcube-bgcolor-c4a samp,
 .dcube-bgcolor-c4a var {
-  background-color: #008dc4;
+  background-color: #171745;
   color: inherit;
 }
 
 /* c5 : rose */
 
-.dcube-bgcolor-c5 {
+/*.dcube-bgcolor-c5 {
   background-color: #ef5565;
   color: #fff;
-}
+}*/
 
 /* Force light background in inverted contrast mode */
 
