@@ -240,11 +240,11 @@ Index
  */
 
 body {
-  color: #0b1b34;
-  font-family: "AmpleSoft", Verdana, sans-serif;
-  font-size: 100%;
-  line-height: 1.4;
-  background-color: #fff;
+    color: #171745;
+    font-family: "AmpleSoft", Verdana, sans-serif;
+    font-size: 100%;
+    line-height: 1.4;
+    background-color: #fff;
 }
 
 body.inv-c,
@@ -346,8 +346,7 @@ a {
 }
 
 a,
-*[class*="dcube-bgcolor-"]:not(.dcube-bgcolor-c2):not(.dcube-bgcolor-c5) a {
-  /*[class*="dcube-bgcolor-"]:not(.dcube-bgcolor-c1):not(.dcube-bgcolor-c2):not(.dcube-bgcolor-c3):not(.dcube-bgcolor-c5):not(.dcube-bgcolor-c8):not(.dcube-bgcolor-c9) a:not[class*="dcube-color"]{*/
+*[class*="dcube-bgcolor-"]:not(.dcube-bgcolor-c2):not(.dcube-bgcolor-c5) a {  
   color: #ef5565;
 }
 
@@ -508,6 +507,10 @@ var {
 code.code {
   display: block;
 }
+
+    code.code-inline-block {
+        display: inline-block;
+    }
 
 /*p kbd,
 p code,
