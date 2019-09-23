@@ -5495,3 +5495,7 @@ fieldset {
 .font-small {
   font-size: 75%;
 }
+
+.dcube-text-left{
+  text-align: left;
+}
